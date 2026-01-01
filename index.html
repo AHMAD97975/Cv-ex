@@ -2,1871 +2,613 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>معين نجم - السيرة الذاتية المهنية</title>
-    
-    <!-- Fonts -->
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- iOS Meta Tags -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
-    
-    <style>
-        /* ===== CSS Reset & Variables ===== */
-        :root {
-            --primary-color: #1e3a8a;
-            --secondary-color: #3b82f6;
-            --accent-color: #f59e0b;
-            --dark-color: #1f2937;
-            --light-color: #f8fafc;
-            --white: #ffffff;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --border-color: #e5e7eb;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.1);
-            --shadow-xl: 0 20px 50px -12px rgba(0,0,0,0.25);
-            --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-            --safe-area-top: env(safe-area-inset-top, 0px);
-            --safe-area-bottom: env(safe-area-inset-bottom, 0px);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        body {
-            font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--white);
-            direction: rtl;
-            overflow-x: hidden;
-            padding-top: var(--safe-area-top);
-            padding-bottom: var(--safe-area-bottom);
-        }
-
-        /* ===== Container ===== */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* ===== Navigation - Fixed Header ===== */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: var(--white);
-            box-shadow: var(--shadow-md);
-            z-index: 1000;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
-            will-change: transform;
-            padding-top: var(--safe-area-top);
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
-        }
-
-        .navbar.hidden {
-            transform: translateY(-100%);
-        }
-
-        .navbar.visible {
-            transform: translateY(0);
-        }
-
-        .navbar.scrolled {
-            box-shadow: var(--shadow-lg);
-        }
-
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            height: 70px;
-        }
-
-        .nav-brand {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav-brand i {
-            color: var(--accent-color);
-        }
-
-        /* ===== Desktop Navigation ===== */
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            padding: 8px 12px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-            background: rgba(30, 58, 138, 0.05);
-        }
-
-        .nav-links a.active {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            right: 12px;
-            left: 12px;
-            height: 3px;
-            background: var(--accent-color);
-            border-radius: 2px;
-        }
-
-        /* ===== Mobile Hamburger Menu ===== */
-        .hamburger-menu {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 24px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            z-index: 1001;
-        }
-
-        .hamburger-menu span {
-            display: block;
-            width: 100%;
-            height: 3px;
-            background: var(--primary-color);
-            border-radius: 3px;
-            transition: all 0.3s ease;
-            transform-origin: center;
-        }
-
-        .hamburger-menu.active span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
-        }
-
-        .hamburger-menu.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger-menu.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
-        }
-
-        /* ===== Action Buttons ===== */
-        .nav-actions {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .btn-lang, .btn-download {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary-color);
-            background: var(--white);
-            color: var(--primary-color);
-        }
-
-        .btn-lang:hover, .btn-download:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-download {
-            background: var(--gradient-primary);
-            color: var(--white);
-            border: none;
-        }
-
-        /* ===== Mobile Menu ===== */
-        @media (max-width: 1024px) {
-            .hamburger-menu {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                right: -100%;
-                width: 300px;
-                height: calc(100vh - 70px);
-                background: var(--white);
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 40px 30px;
-                box-shadow: var(--shadow-xl);
-                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                z-index: 999;
-                overflow-y: auto;
-                gap: 0;
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-links a {
-                width: 100%;
-                padding: 15px 20px;
-                margin: 5px 0;
-                font-size: 1.1rem;
-                border-radius: 10px;
-            }
-
-            .mobile-menu-backdrop {
-                display: none;
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: rgba(0, 0, 0, 0.5);
-                backdrop-filter: blur(5px);
-                z-index: 998;
-            }
-
-            .mobile-menu-backdrop.active {
-                display: block;
-            }
-
-            .nav-actions {
-                gap: 10px;
-            }
-
-            .btn-lang, .btn-download {
-                padding: 8px 15px;
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .nav-links {
-                width: 100%;
-                right: -100%;
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-brand span {
-                display: none;
-            }
-
-            .btn-lang span, .btn-download span {
-                display: none;
-            }
-
-            .btn-lang i, .btn-download i {
-                margin: 0;
-            }
-        }
-
-        /* ===== Hero Section ===== */
-        .hero-section {
-            min-height: 100vh;
-            background: var(--gradient-primary);
-            padding: 120px 0 60px;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: cover;
-            opacity: 0.1;
-        }
-
-        .hero-profile-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 24px;
-            padding: 40px;
-            text-align: center;
-            margin: 0 auto;
-            max-width: 800px;
-            box-shadow: var(--shadow-xl);
-        }
-
-        .profile-image-container {
-            width: 180px;
-            height: 220px;
-            margin: 0 auto 30px;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 4px solid var(--white);
-            box-shadow: var(--shadow-lg);
-            background: var(--white);
-        }
-
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top center;
-        }
-
-        .profile-badge {
-            display: inline-block;
-            background: var(--gradient-accent);
-            color: var(--white);
-            padding: 10px 25px;
-            border-radius: 25px;
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow-md);
-        }
-
-        .profile-name {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--white);
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .profile-title {
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .profile-subtitle {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.8;
-            margin-bottom: 40px;
-        }
-
-        /* Personal Information Grid */
-        .personal-info {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 30px;
-            margin-top: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .info-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
-        }
-
-        .info-item i {
-            font-size: 1.3rem;
-            color: var(--accent-color);
-            margin-top: 3px;
-            min-width: 30px;
-        }
-
-        .info-label {
-            display: block;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 5px;
-        }
-
-        .info-value {
-            display: block;
-            font-size: 1.1rem;
-            color: var(--white);
-            font-weight: 600;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .info-value:hover {
-            color: var(--accent-color);
-        }
-
-        /* ===== Sections Common Styles ===== */
-        section {
-            padding: 80px 0;
-            scroll-margin-top: 80px;
-        }
-
-        section:nth-child(even) {
-            background-color: var(--light-color);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 50%;
-            transform: translateX(50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-accent);
-            border-radius: 2px;
-        }
-
-        .section-intro {
-            text-align: center;
-            color: var(--text-light);
-            max-width: 800px;
-            margin: 0 auto 50px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* ===== About Section ===== */
-        .profile-card-section {
-            background: var(--white);
-        }
-
-        .profile-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 50px;
-            box-shadow: var(--shadow-lg);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .profile-description {
-            text-align: center;
-            color: var(--text-light);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 40px;
-        }
-
-        .profile-highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .highlight-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
-            background: var(--light-color);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .highlight-item:hover {
-            transform: translateX(-5px);
-            background: var(--primary-color);
-            color: var(--white);
-        }
-
-        .highlight-item:hover i {
-            color: var(--white);
-        }
-
-        .highlight-item i {
-            font-size: 1.3rem;
-            color: var(--accent-color);
-            min-width: 30px;
-        }
-
-        /* ===== Competencies Section ===== */
-        .competencies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .competency-card {
-            background: var(--white);
-            padding: 35px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-            text-align: center;
-            border: 2px solid transparent;
-        }
-
-        .competency-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--secondary-color);
-        }
-
-        .card-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.8rem;
-            color: var(--white);
-        }
-
-        .competency-card h3 {
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        .competency-card p {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        /* ===== Achievements Section ===== */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
-        }
-
-        .stat-card {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-md);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .awards-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .badge {
-            background: var(--gradient-primary);
-            color: var(--white);
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        }
-
-        .badge:hover {
-            transform: scale(1.05);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* ===== Education Section ===== */
-        .education-timeline {
-            max-width: 900px;
-            margin: 0 auto;
-            display: grid;
-            gap: 30px;
-        }
-
-        .education-item {
-            background: var(--white);
-            padding: 35px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-md);
-            border-right: 4px solid var(--secondary-color);
-            transition: all 0.3s ease;
-        }
-
-        .education-item:hover {
-            transform: translateX(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .education-badge {
-            display: inline-block;
-            background: var(--gradient-accent);
-            color: var(--white);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .education-item h3 {
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .institution {
-            color: var(--secondary-color);
-            font-weight: 600;
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-
-        .description {
-            color: var(--text-light);
-            line-height: 1.7;
-            margin-top: 15px;
-        }
-
-        /* ===== Experience Sections ===== */
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .experience-header h3 {
-            font-size: 1.6rem;
-            color: var(--primary-color);
-            flex: 1;
-        }
-
-        .date-badge {
-            background: var(--gradient-accent);
-            color: var(--white);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-
-        .experience-intro {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 40px;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .project-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--gradient-primary);
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover::before {
-            transform: scaleY(1);
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .project-number {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--accent-color);
-            opacity: 0.3;
-            margin-bottom: 10px;
-        }
-
-        .project-card h4 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .project-details {
-            color: var(--text-light);
-            line-height: 1.7;
-            margin: 15px 0;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 20px;
-        }
-
-        .tag {
-            background: var(--light-color);
-            color: var(--secondary-color);
-            padding: 6px 15px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        /* Ministry Experience */
-        .role-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .role-badge {
-            background: var(--gradient-primary);
-            color: var(--white);
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .achievements-highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .achievement-box {
-            background: var(--white);
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .achievement-box:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .responsibilities-list {
-            display: grid;
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .responsibility-item {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-md);
-        }
-
-        .responsibility-item h4 {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .number {
-            color: var(--accent-color);
-            font-weight: 700;
-        }
-
-        /* Ethos Experience */
-        .ethos-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-        }
-
-        .stat-box {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-md);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .stat-box:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .projects-category-title {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin: 50px 0 30px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid var(--accent-color);
-        }
-
-        .major-projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-
-        .additional-projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        /* ===== Previous Experience ===== */
-        .two-column-layout {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-        }
-
-        .previous-jobs {
-            display: grid;
-            gap: 20px;
-        }
-
-        .previous-job-card {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-        }
-
-        .previous-job-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* ===== Certifications ===== */
-        .cert-categories {
-            display: grid;
-            gap: 25px;
-        }
-
-        .cert-category {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-md);
-        }
-
-        .cert-category h4 {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .cert-category i {
-            color: var(--accent-color);
-        }
-
-        .cert-category ul {
-            margin-right: 20px;
-        }
-
-        .cert-category li {
-            color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 8px;
-            padding-right: 15px;
-            position: relative;
-        }
-
-        .cert-category li::before {
-            content: '•';
-            position: absolute;
-            right: 0;
-            color: var(--accent-color);
-        }
-
-        /* ===== Skills Section ===== */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .skill-category-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-        }
-
-        .skill-category-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .skill-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--white);
-            margin-bottom: 20px;
-        }
-
-        .skill-category-card h3 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .skill-category-card li {
-            color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 10px;
-            padding-right: 20px;
-            position: relative;
-        }
-
-        .skill-category-card li::before {
-            content: '✓';
-            position: absolute;
-            right: 0;
-            color: var(--accent-color);
-            font-weight: 700;
-        }
-
-        /* Deliverables */
-        .deliverables-section {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-lg);
-            margin-top: 60px;
-        }
-
-        .deliverables-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 15px;
-        }
-
-        .deliverable-item {
-            background: var(--light-color);
-            padding: 15px 20px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .deliverable-item:hover {
-            transform: translateX(-5px);
-            background: var(--white);
-            box-shadow: var(--shadow-sm);
-        }
-
-        /* ===== Awards Section ===== */
-        .awards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .award-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .award-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .award-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: var(--white);
-            margin: 0 auto 20px;
-        }
-
-        .award-card h3 {
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .closing-statement {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-md);
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        /* ===== Contact Section ===== */
-        .contact-section {
-            background: var(--gradient-primary);
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,100 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: cover;
-            opacity: 0.1;
-        }
-
-        .contact-section .section-title {
-            color: var(--white);
-        }
-
-        .contact-section .section-title::after {
-            background: var(--white);
-        }
-
-        .contact-section .section-intro {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
-
-        .contact-card {
-            background: var(--white);
-            color: var(--text-dark);
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-md);
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .contact-card i {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .contact-card h4 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .contact-card p {
-            color: var(--text-light);
-            font-size: 1rem;
-        }
-
-        /* Specific colors for contact cards */
-        .whatsapp i { color: #25D366; }
-        .email i { color: #D44638; }
-        .linkedin i { color: #0077B5; }
-        .instagram i { color: #E4405F; }
-        .location i { color: var(--primary-color); }
-        .golden-visa i { color: var(--accent-color); }
-
-        /* ===== Footer ===== */
-        .footer {
-            background: var(--dark-color);
-            color: var(--white);
-            padding: 60px 0 30px;
-            position: relative;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-accent);
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .footer-main {
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 25px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 25px;
-            color: var(--white);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-link:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
-        }
-
-        /* ===== Floating Hamburger Button ===== */
-        .floating-hamburger {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            color: var(--white);
-            border: none;
-            cursor: pointer;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1001;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s ease;
-            padding: 0;
-        }
-
-        .floating-hamburger.active {
-            display: flex;
-            animation: fadeInUp 0.3s ease;
-        }
-
-        .floating-hamburger:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .floating-hamburger i {
-            font-size: 1.5rem;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ===== Responsive Design ===== */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 15px;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .profile-name {
-                font-size: 2.2rem;
-            }
-
-            .profile-title {
-                font-size: 1.3rem;
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .competencies-grid,
-            .projects-grid,
-            .skills-grid,
-            .awards-grid,
-            .major-projects-grid,
-            .additional-projects-grid,
-            .two-column-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .floating-hamburger {
-                bottom: 20px;
-                right: 20px;
-                width: 55px;
-                height: 55px;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-
-            .hero-profile-card {
-                padding: 30px 20px;
-            }
-
-            .profile-card {
-                padding: 30px 20px;
-            }
-
-            .stat-number {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 12px;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .profile-name {
-                font-size: 1.8rem;
-            }
-
-            .hero-section {
-                padding: 100px 0 40px;
-            }
-
-            .btn-lang, .btn-download {
-                padding: 8px 15px;
-                font-size: 0.9rem;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .floating-hamburger {
-                bottom: 15px;
-                right: 15px;
-                width: 50px;
-                height: 50px;
-            }
-
-            .navbar .container {
-                padding: 12px 15px;
-            }
-        }
-
-        /* ===== iOS Specific Fixes ===== */
-        @supports (-webkit-touch-callout: none) {
-            .hero-section {
-                min-height: -webkit-fill-available;
-            }
-            
-            section {
-                padding: 60px 0;
-            }
-            
-            .navbar {
-                padding-top: env(safe-area-inset-top);
-                height: calc(70px + env(safe-area-inset-top));
-            }
-            
-            .navbar .container {
-                height: calc(70px + env(safe-area-inset-top));
-            }
-        }
-
-        /* ===== Print Styles ===== */
-        @media print {
-            .navbar,
-            .nav-actions,
-            .contact-section,
-            .footer,
-            .floating-hamburger,
-            .hamburger-menu,
-            .no-print {
-                display: none !important;
-            }
-            
-            body {
-                background: white !important;
-                color: black !important;
-                font-size: 12pt !important;
-            }
-            
-            .container {
-                max-width: 100% !important;
-                padding: 0 !important;
-            }
-            
-            section {
-                padding: 20pt 0 !important;
-                page-break-inside: avoid;
-            }
-            
-            .hero-section {
-                background: white !important;
-                color: black !important;
-                padding: 0 !important;
-            }
-            
-            .profile-image {
-                width: 120pt !important;
-                height: 150pt !important;
-            }
-            
-            a {
-                color: black !important;
-                text-decoration: none !important;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#home" class="nav-brand">
-                <i class="fas fa-user-tie"></i>
-                <span>معين نجم</span>
-            </a>
-            
-            <!-- Desktop Navigation -->
-            <div class="nav-links">
-                <a href="#home" class="active">الرئيسية</a>
-                <a href="#about">نبذة</a>
-                <a href="#education">التعليم</a>
-                <a href="#experience">الخبرات</a>
-                <a href="#certifications">الشهادات</a>
-                <a href="#skills">المهارات</a>
-                <a href="#deliverables">المخرجات</a>
-                <a href="#awards">الجوائز</a>
-            </div>
-            
-            <!-- Mobile Hamburger Menu -->
-            <button class="hamburger-menu" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <!-- Action Buttons -->
-            <div class="nav-actions">
-                <button class="btn-lang" onclick="toggleLanguage()">
-                    <i class="fas fa-language"></i>
-                    <span id="lang-text">EN</span>
-                </button>
-                <button class="btn-download" onclick="downloadCV()">
-                    <i class="fas fa-download"></i>
-                    <span>تحميل PDF</span>
-                </button>
-            </div>
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-brand">معين نجم</div>
+        
+        <!-- Hamburger Menu for Mobile -->
+        <button class="hamburger-menu" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <div class="nav-links">
+            <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+            <a href="#about" data-ar="نبذة" data-en="About">نبذة</a>
+            <a href="#education" data-ar="التعليم" data-en="Education">التعليم</a>
+            <a href="#experience" data-ar="الخبرات" data-en="Experience">الخبرات</a>
+            <a href="#certifications" data-ar="الشهادات" data-en="Certifications">الشهادات</a>
+            <a href="#skills" data-ar="المهارات" data-en="Skills">المهارات</a>
+            <a href="#deliverables" data-ar="المخرجات" data-en="Deliverables">المخرجات</a>
+            <a href="#awards" data-ar="الجوائز" data-en="Awards">الجوائز</a>
+            <a href="#contact" data-ar="التواصل" data-en="Contact">التواصل</a>
         </div>
-    </nav>
+        
+        <div class="nav-actions">
+            <button class="btn-lang" onclick="toggleLanguage()" title="تبديل اللغة">
+                <i class="fas fa-language"></i>
+                <span id="lang-text">EN</span>
+            </button>
+            <button class="btn-download" onclick="downloadCV()">
+                <i class="fas fa-download"></i> <span data-ar="تحميل السيرة الذاتية" data-en="Download CV">تحميل السيرة الذاتية</span>
+            </button>
+        </div>
+    </div>
+</nav>
 
-    <!-- Mobile Menu Backdrop -->
-    <div class="mobile-menu-backdrop" onclick="toggleMobileMenu()"></div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container">
-            <div class="hero-profile-card">
-                <div class="profile-image-container">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzFlM2E4YSIvPgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9Ijg1IiByPSI0MCIgZmlsbD0iI2ZmZiIvPgogIDxwYXRoIGQ9Ik02MCAxNjAgYzIwIC0xMCA4MCAtMTAgMTAwIDAgWiIgZmlsbD0iI2ZmZiIvPgo8L3N2Zz4=" 
-                         alt="معين نجم" 
-                         class="profile-image"
-                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzFlM2E4YSIvPgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9Ijg1IiByPSI0MCIgZmlsbD0iI2ZmZiIvPgogIDxwYXRoIGQ9Ik02MCAxNjAgYzIwIC0xMCA4MCAtMTAgMTAwIDAgWiIgZmlsbD0iI2ZmZiIvPgo8L3N2Zz4='">
-                </div>
-                
-                <div class="profile-badge">خبير معتمد | حكم جائزة SCXA</div>
-                <h1 class="profile-name">معين نجم</h1>
-                <h2 class="profile-title">خبير التميز المؤسسي وتحسين الخدمات</h2>
-                <p class="profile-subtitle">
-                    إدارة المشاريع - التميز - الجودة - إدارة الأداء - مؤشرات الأداء - الاستراتيجية - تحسين الخدمات - تجربة العميل
-                </p>
-                
-                <!-- Personal Information -->
-                <div class="personal-info">
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <span class="info-label">الهاتف</span>
-                                <a href="tel:0567889975" class="info-value">0567889975</a>
-                            </div>
+<div class="mobile-menu-backdrop"></div>
+
+
+    
+    <!-- Page 1: Hero Section with Profile -->
+<section id="home" class="hero-section">
+    <div class="container">
+        <!-- Profile Image and Info -->
+        <div class="hero-profile-card animate-fade-in">
+            <div class="profile-image-container">
+                <img src="moein.jpg" alt="معين نجم - Moein Najem" class="profile-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjEwMCIgZmlsbD0iIzFlM2E4YSIvPgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9Ijc1IiByPSIzNSIgZmlsbD0iI2ZmZiIvPgogIDxwYXRoIGQ9Ik0zMCAxODAgQzMwIDEzMCA2MCAxMjAgMTAwIDEyMCBDMTQwIDEyMCAxNzAgMTMwIDE3MCAxODAgWiIgZmlsbD0iI2ZmZiIvPgo8L3N2Zz4='">
+            </div>
+            <div class="profile-badge" data-ar="خبير معتمد | حكم جائزة SCXA" data-en="Certified Expert | SCXA Judge">خبير معتمد | حكم جائزة SCXA</div>
+            <h1 class="profile-name" data-ar="معين نجم" data-en="Moein Najem">معين نجم</h1>
+            <h2 class="profile-title" data-ar="خبير التميز المؤسسي وتحسين الخدمات" data-en="Corporate Excellence & Service Improvement Expert">خبير التميز المؤسسي وتحسين الخدمات</h2>
+            <p class="profile-subtitle" data-ar="إدارة المشاريع - التميز - الجودة - إدارة الأداء - مؤشرات الأداء - الاستراتيجية - تحسين الخدمات - تجربة العميل" data-en="Project Management - Excellence - Quality - Performance Management - KPI - Strategy - Service Improvement - CX">إدارة المشاريع - التميز - الجودة - إدارة الأداء - مؤشرات الأداء - الاستراتيجية - تحسين الخدمات - تجربة العميل</p>
+            
+            <!-- Personal Information -->
+            <div class="personal-info animate-fade-in-delay">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-content">
+                            <span class="info-label" data-ar="الهاتف" data-en="Phone">الهاتف</span>
+                            <a href="tel:0567889975" class="info-value">0567889975</a>
                         </div>
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <span class="info-label">البريد الإلكتروني</span>
-                                <a href="mailto:Moein-najem@hotmail.com" class="info-value">Moein-najem@hotmail.com</a>
-                            </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-content">
+                            <span class="info-label" data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</span>
+                            <a href="mailto:Moein-najem@hotmail.com" class="info-value">Moein-najem@hotmail.com</a>
                         </div>
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <span class="info-label">العنوان</span>
-                                <span class="info-value">دبي، الإمارات العربية المتحدة</span>
-                            </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info-content">
+                            <span class="info-label" data-ar="العنوان" data-en="Location">العنوان</span>
+                            <span class="info-value" data-ar="دبي، الإمارات العربية المتحدة" data-en="Dubai, United Arab Emirates">دبي، الإمارات العربية المتحدة</span>
                         </div>
-                        <div class="info-item">
-                            <i class="fas fa-building"></i>
-                            <div>
-                                <span class="info-label">الشركة الحالية</span>
-                                <a href="http://impactin.ae/" target="_blank" class="info-value">IMPACT IN</a>
-                            </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-building"></i>
+                        <div class="info-content">
+                            <span class="info-label" data-ar="الشركة الحالية" data-en="Current Company">الشركة الحالية</span>
+                            <a href="http://impactin.ae/" target="_blank" class="info-value company-link">
+                                <span>IMPACT IN</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- About Section -->
+        <!-- CTA Button -->
+        <div class="contact-button animate-fade-in">
+            <a href="#contact" class="btn-primary">
+                <i class="fas fa-handshake"></i>
+                <span data-ar="تواصل معي الآن" data-en="Contact Me Now">تواصل معي الآن</span>
+            </a>
+        </div>
+    </div>
+</section>
+    <!-- Page 2: About Profile -->
     <section id="about" class="profile-card-section">
         <div class="container">
             <div class="profile-card">
-                <h2 class="section-title">نبذة عن معين نجم</h2>
-                <p class="profile-description">
-                    معين نجم خبير استشاري متميز ومتخصص في مجالات التميز المؤسسي وإدارة المشاريع والجودة، يتمتع بخبرة واسعة تمتد لأكثر من 12 عاماً في العمل مع الجهات الحكومية الرائدة في دولة الإمارات العربية المتحدة والمملكة العربية السعودية. حاصل على العديد من الشهادات المهنية المعتمدة، ومعتمد كحكم لجائزة الشيخ خليفة للتميز الحكومي (SCXA)، وكمقيم رئيسي لبرنامج صفر بيروقراطية الحكومي.
-                </p>
+                <h2 class="section-title" data-ar="نبذة عن معين نجم" data-en="About Moein Najem">نبذة عن معين نجم</h2>
+                <p class="profile-description" data-ar="معين نجم خبير استشاري متميز ومتخصص في مجالات التميز المؤسسي وإدارة المشاريع والجودة، يتمتع بخبرة واسعة تمتد لأكثر من 12 عاماً في العمل مع الجهات الحكومية الرائدة في دولة الإمارات العربية المتحدة والمملكة العربية السعودية. حاصل على العديد من الشهادات المهنية المعتمدة، ومعتمد كحكم لجائزة الشيخ خليفة للتميز الحكومي (SCXA)، وكمقيم رئيسي لبرنامج صفر بيروقراطية الحكومي." data-en="Moein Najem is a distinguished consultant specializing in organizational excellence, project management and quality, with extensive experience spanning over 12 years working with leading government entities in the UAE and Saudi Arabia. He holds numerous professional certifications and is certified as a judge for the Sheikh Khalifa Excellence Award (SCXA) and as a lead assessor for the Zero Government Bureaucracy program.">معين نجم خبير استشاري متميز ومتخصص في مجالات التميز المؤسسي وإدارة المشاريع والجودة، يتمتع بخبرة واسعة تمتد لأكثر من 12 عاماً في العمل مع الجهات الحكومية الرائدة في دولة الإمارات العربية المتحدة والمملكة العربية السعودية. حاصل على العديد من الشهادات المهنية المعتمدة، ومعتمد كحكم لجائزة الشيخ خليفة للتميز الحكومي (SCXA)، وكمقيم رئيسي لبرنامج صفر بيروقراطية الحكومي.</p>
                 <div class="profile-highlights">
                     <div class="highlight-item">
                         <i class="fas fa-star"></i>
-                        <span>خبرة +12 سنة في التميز المؤسسي</span>
+                        <span data-ar="خبرة +12 سنة في التميز المؤسسي" data-en="+12 Years Experience in Organizational Excellence">خبرة +12 سنة في التميز المؤسسي</span>
                     </div>
                     <div class="highlight-item">
                         <i class="fas fa-award"></i>
-                        <span>حكم معتمد في جائزة SCXA</span>
+                        <span data-ar="حكم معتمد في جائزة SCXA" data-en="Certified SCXA Award Judge">حكم معتمد في جائزة SCXA</span>
                     </div>
                     <div class="highlight-item">
                         <i class="fas fa-building"></i>
-                        <span>خبرة مع جهات حكومية رائدة</span>
+                        <span data-ar="خبرة مع جهات حكومية رائدة" data-en="Experience with Leading Government Entities">خبرة مع جهات حكومية رائدة</span>
                     </div>
                     <div class="highlight-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>تطبيق معايير التميز المحلية والعالمية</span>
+                        <span data-ar="تطبيق معايير التميز المحلية والعالمية" data-en="Implementation of Local & International Excellence Standards">تطبيق معايير التميز المحلية والعالمية</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-users"></i>
+                        <span data-ar="تحسين تجربة العملاء" data-en="Customer Experience Enhancement">تحسين تجربة العملاء</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Core Competencies -->
+    <!-- Page 3: Core Competencies -->
     <section class="competencies-section">
         <div class="container">
-            <h2 class="section-title">التخصصات الأساسية والكفاءات المهنية</h2>
-            <p class="section-intro">مجموعة شاملة من الخبرات والمهارات المتخصصة في مجالات التميز المؤسسي وإدارة المشاريع وتحسين الخدمات</p>
-            
+            <h2 class="section-title" data-ar="التخصصات الأساسية والكفاءات المهنية" data-en="Core Competencies & Professional Skills">التخصصات الأساسية والكفاءات المهنية</h2>
+            <p class="section-intro" data-ar="مجموعة شاملة من الخبرات والمهارات المتخصصة في مجالات التميز المؤسسي وإدارة المشاريع وتحسين الخدمات" data-en="Comprehensive expertise and specialized skills in organizational excellence, project management and service improvement">مجموعة شاملة من الخبرات والمهارات المتخصصة في مجالات التميز المؤسسي وإدارة المشاريع وتحسين الخدمات، مكتسبة من خلال سنوات طويلة من العمل مع أبرز المؤسسات الحكومية في المنطقة.</p>
             <div class="competencies-grid">
                 <div class="competency-card">
                     <div class="card-icon"><i class="fas fa-trophy"></i></div>
-                    <h3>التميز المؤسسي</h3>
-                    <p>تطبيق نماذج التميز العالمية والمحلية وتحقيق الاعتمادات المرموقة</p>
+                    <h3 data-ar="التميز المؤسسي" data-en="Organizational Excellence">التميز المؤسسي</h3>
+                    <p data-ar="تطبيق نماذج التميز العالمية والمحلية وتحقيق الاعتمادات المرموقة" data-en="Implementing global and local excellence models and achieving prestigious accreditations">تطبيق نماذج التميز العالمية والمحلية وتحقيق الاعتمادات المرموقة</p>
                 </div>
                 <div class="competency-card">
                     <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
-                    <h3>إدارة المشاريع</h3>
-                    <p>خبرة متقدمة في إدارة المشاريع الاستشارية المعقدة من التخطيط حتى التسليم والتقييم</p>
+                    <h3 data-ar="إدارة المشاريع" data-en="Project Management">إدارة المشاريع</h3>
+                    <p data-ar="خبرة متقدمة في إدارة المشاريع الاستشارية المعقدة من التخطيط حتى التسليم والتقييم" data-en="Advanced experience in managing complex consulting projects from planning to delivery and evaluation">خبرة متقدمة في إدارة المشاريع الاستشارية المعقدة من التخطيط حتى التسليم والتقييم</p>
                 </div>
                 <div class="competency-card">
                     <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>إدارة الأداء</h3>
-                    <p>تصميم وتطبيق أنظمة إدارة الأداء المؤسسي وبطاقات الأداء المتوازن</p>
+                    <h3 data-ar="إدارة الأداء" data-en="Performance Management">إدارة الأداء</h3>
+                    <p data-ar="تصميم وتطبيق أنظمة إدارة الأداء المؤسسي وبطاقات الأداء المتوازن" data-en="Designing and implementing institutional performance management systems and balanced scorecards">تصميم وتطبيق أنظمة إدارة الأداء المؤسسي وبطاقات الأداء المتوازن</p>
                 </div>
                 <div class="competency-card">
                     <div class="card-icon"><i class="fas fa-certificate"></i></div>
-                    <h3>الجودة</h3>
-                    <p>إدارة أنظمة الجودة وتطبيق معايير ISO والمواصفات الدولية</p>
+                    <h3 data-ar="الجودة" data-en="Quality">الجودة</h3>
+                    <p data-ar="إدارة أنظمة الجودة وتطبيق معايير ISO والمواصفات الدولية" data-en="Managing quality systems and implementing ISO standards and international specifications">إدارة أنظمة الجودة وتطبيق معايير ISO والمواصفات الدولية</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Achievements & Stats -->
+    <!-- Page 4: Achievements & Stats -->
     <section class="achievements-section">
         <div class="container">
-            <h2 class="section-title">الملف الشخصي والإنجازات</h2>
-            <p class="profile-description">
-                معين نجم خبير استشاري متميز ومتخصص في مجالات التميز المؤسسي وإدارة المشاريع والجودة، يتمتع بخبرة واسعة تمتد لأكثر من 12 عاماً في العمل مع الجهات الحكومية الرائدة في دولة الإمارات العربية المتحدة والمملكة العربية السعودية. حاصل على العديد من الشهادات المهنية المعتمدة، ومعتمد كحكم لجائزة الشيخ خليفة للتميز الحكومي (SCXA)، وكمقيم رئيسي لبرنامج صفر بيروقراطية الحكومي.
-            </p>
-            
+            <h2 class="section-title" data-ar="الملف الشخصي والإنجازات" data-en="Profile & Achievements">الملف الشخصي والإنجازات</h2>
+            <p class="profile-description" data-ar="معين نجم خبير استشاري متميز ومتخصص في مجالات التميز المؤسسي وإدارة المشاريع والجودة" data-en="Moein Najem is a distinguished consultant specializing in organizational excellence, project management and quality">معين نجم خبير استشاري متميز ومتخصص في مجالات التميز المؤسسي وإدارة المشاريع والجودة، يتمتع بخبرة واسعة تمتد لأكثر من 12 عاماً في العمل مع الجهات الحكومية الرائدة في دولة الإمارات العربية المتحدة والمملكة العربية السعودية. حاصل على العديد من الشهادات المهنية المعتمدة، ومعتمد كحكم لجائزة الشيخ خليفة للتميز الحكومي (SCXA)، وكمقيم رئيسي لبرنامج صفر بيروقراطية الحكومي. يمتلك سجلاً حافلاً في قيادة وإنجاز مشاريع استراتيجية معقدة، وتحقيق اعتمادات دولية مرموقة، وتطبيق أفضل الممارسات العالمية في التميز المؤسسي وتجربة العميل.</p>
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-number">+10</div>
-                    <p class="stat-label">اعتماد دولي تم تحقيقها للجهات المختلفة</p>
+                    <p class="stat-label" data-ar="اعتماد دولي تم تحقيقها للجهات المختلفة" data-en="International accreditations achieved for various entities">اعتماد دولي تم تحقيقها للجهات المختلفة</p>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">+50</div>
-                    <p class="stat-label">مشروع منجز مع جهات حكومية رائدة</p>
+                    <p class="stat-label" data-ar="مشروع منجز مع جهات حكومية رائدة" data-en="Completed projects with leading government entities">مشروع منجز مع جهات حكومية رائدة</p>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">+12</div>
-                    <p class="stat-label">سنة خبرة في التميز المؤسسي وإدارة المشاريع</p>
+                    <p class="stat-label" data-ar="سنة خبرة في التميز المؤسسي وإدارة المشاريع" data-en="Years of experience in organizational excellence and project management">سنة خبرة في التميز المؤسسي وإدارة المشاريع</p>
                 </div>
             </div>
-            
             <div class="awards-preview">
-                <h3>الاعتمادات والجوائز المحققة للجهات</h3>
+                <h3 data-ar="الاعتمادات والجوائز المحققة للجهات" data-en="Achieved Accreditations & Awards">الاعتمادات والجوائز المحققة للجهات</h3>
                 <div class="awards-badges">
-                    <span class="badge">نظام التصنيف العالمي بالنجوم</span>
-                    <span class="badge">جائزة الشيخ خليفة للتميز الحكومي</span>
+                    <span class="badge" data-ar="نظام التصنيف العالمي بالنجوم" data-en="Global Star Rating System">نظام التصنيف العالمي بالنجوم</span>
+                    <span class="badge" data-ar="جائزة الشيخ خليفة للتميز الحكومي" data-en="Sheikh Khalifa Government Excellence Award">جائزة الشيخ خليفة للتميز الحكومي</span>
                     <span class="badge">ISO 9001</span>
                     <span class="badge">ISO 10002</span>
-                    <span class="badge">برنامج 7 نجوم</span>
-                    <span class="badge">صفر بيروقراطية</span>
+                    <span class="badge" data-ar="برنامج 7 نجوم" data-en="7 Stars Program">برنامج 7 نجوم</span>
+                    <span class="badge" data-ar="صفر بيروقراطية" data-en="Zero Bureaucracy">صفر بيروقراطية</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education -->
+    <!-- Page 5: Academic Qualifications -->
     <section id="education" class="education-section">
         <div class="container">
-            <h2 class="section-title">المؤهلات الأكاديمية والتعليم</h2>
-            <p class="section-intro">مسيرة أكاديمية متدرجة تجمع بين الأسس النظرية والتطبيقات العملية</p>
-            
+            <h2 class="section-title" data-ar="المؤهلات الأكاديمية والتعليم" data-en="Academic Qualifications & Education">المؤهلات الأكاديمية والتعليم</h2>
+            <p class="section-intro" data-ar="مسيرة أكاديمية متدرجة تجمع بين الأسس النظرية والتطبيقات العملية" data-en="Progressive academic journey combining theoretical foundations and practical applications">مسيرة أكاديمية متدرجة تجمع بين الأسس النظرية والتطبيقات العملية في مجالات إدارة الأعمال والمشاريع.</p>
             <div class="education-timeline">
                 <div class="education-item">
-                    <div class="education-badge">جاري الدراسة</div>
-                    <h3>ماجستير إدارة الأعمال (إدارة المشاريع - طالب حالياً)</h3>
+                    <div class="education-badge" data-ar="جاري الدراسة" data-en="Current Student">جاري الدراسة</div>
+                    <h3 data-ar="ماجستير إدارة الأعمال (إدارة المشاريع - طالب حالياً)" data-en="MBA - Project Management (Current Student)">ماجستير إدارة الأعمال (إدارة المشاريع - طالب حالياً)</h3>
                     <p class="institution">جامعة ميدوشن | Midocean University</p>
-                    <p class="description">
-                        برنامج ماجستير متخصص يركز على إدارة المشاريع الاستراتيجية والقيادة المؤسسية، يهدف إلى تعزيز المهارات الإدارية المتقدمة والقدرة على قيادة التحولات المؤسسية الكبرى وإدارة المشاريع المعقدة متعددة الأطراف.
-                    </p>
+                    <p class="degree-en">MBA - Project Management (Current Student)</p>
+                    <p class="description" data-ar="برنامج ماجستير متخصص يركز على إدارة المشاريع الاستراتيجية والقيادة المؤسسية، يهدف إلى تعزيز المهارات الإدارية المتقدمة والقدرة على قيادة التحولات المؤسسية الكبرى وإدارة المشاريع المعقدة متعددة الأطراف." data-en="A specialized MBA program focusing on strategic project management and organizational leadership, aimed at enhancing advanced management skills and the ability to lead major organizational transformations and manage complex multi-stakeholder projects.">برنامج ماجستير متخصص يركز على إدارة المشاريع الاستراتيجية والقيادة المؤسسية، يهدف إلى تعزيز المهارات الإدارية المتقدمة والقدرة على قيادة التحولات المؤسسية الكبرى وإدارة المشاريع المعقدة متعددة الأطراف.</p>
                 </div>
                 <div class="education-item">
-                    <div class="education-badge">مكتمل</div>
-                    <h3>ماجستير مصغر – إدارة الأعمال والإدارة العامة</h3>
+                    <div class="education-badge" data-ar="مكتمل" data-en="Completed">مكتمل</div>
+                    <h3 data-ar="ماجستير مصغر – إدارة الأعمال والإدارة العامة" data-en="Mini MBA – Business Administration & General Management">ماجستير مصغر – إدارة الأعمال والإدارة العامة</h3>
                     <p class="institution">المعهد الدولي لإدارة الأعمال (IBMI)</p>
-                    <p class="description">
-                        برنامج تأهيل متخصص يغطي مجالات الإدارة الاستراتيجية، التخطيط المؤسسي، إدارة الأعمال الدولية، والقيادة التنفيذية، مع التركيز على تطبيق أفضل الممارسات الإدارية في بيئة الأعمال المعاصرة.
-                    </p>
+                    <p class="degree-en">International Business Management Institute</p>
+                    <p class="description" data-ar="برنامج تأهيل متخصص يغطي مجالات الإدارة الاستراتيجية، التخطيط المؤسسي، إدارة الأعمال الدولية، والقيادة التنفيذية، مع التركيز على تطبيق أفضل الممارسات الإدارية في بيئة الأعمال المعاصرة." data-en="A specialized qualification program covering strategic management, organizational planning, international business management, and executive leadership, with focus on applying best management practices in contemporary business environment.">برنامج تأهيل متخصص يغطي مجالات الإدارة الاستراتيجية، التخطيط المؤسسي، إدارة الأعمال الدولية، والقيادة التنفيذية، مع التركيز على تطبيق أفضل الممارسات الإدارية في بيئة الأعمال المعاصرة.</p>
                 </div>
                 <div class="education-item">
-                    <div class="education-badge">مكتمل</div>
-                    <h3>بكالوريوس – الأدب الإنجليزي والترجمة</h3>
+                    <div class="education-badge" data-ar="مكتمل" data-en="Completed">مكتمل</div>
+                    <h3 data-ar="بكالوريوس – الأدب الإنجليزي والترجمة" data-en="Bachelor – English Literature & Translation">بكالوريوس – الأدب الإنجليزي والترجمة</h3>
                     <p class="institution">جامعة دمشق | Damascus University</p>
-                    <p class="description">
-                        شهادة جامعية في الأدب الإنجليزي والترجمة، وفرت أساساً قوياً ومتيناً في مهارات التواصل اللغوي، الترجمة الاحترافية، التحليل النقدي، والقدرة على التفاعل بفعالية مع الثقافات المختلفة والجهات الدولية.
-                    </p>
+                    <p class="description" data-ar="شهادة جامعية في الأدب الإنجليزي والترجمة، وفرت أساساً قوياً ومتيناً في مهارات التواصل اللغوي، الترجمة الاحترافية، التحليل النقدي، والقدرة على التفاعل بفعالية مع الثقافات المختلفة والجهات الدولية، مما يدعم العمل الاستشاري مع المعايير والنماذج العالمية." data-en="A university degree in English Literature and Translation, providing a strong foundation in linguistic communication skills, professional translation, critical analysis, and the ability to effectively interact with different cultures and international entities, supporting consulting work with global standards and models.">شهادة جامعية في الأدب الإنجليزي والترجمة، وفرت أساساً قوياً ومتيناً في مهارات التواصل اللغوي، الترجمة الاحترافية، التحليل النقدي، والقدرة على التفاعل بفعالية مع الثقافات المختلفة والجهات الدولية، مما يدعم العمل الاستشاري مع المعايير والنماذج العالمية.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Current Experience -->
+    <!-- Page 6: Current Experience -->
     <section id="experience" class="experience-section">
         <div class="container">
-            <h2 class="section-title">الخبرة الحالية</h2>
+            <h2 class="section-title" data-ar="الخبرة الحالية" data-en="Current Experience">الخبرة الحالية</h2>
             <div class="experience-header">
-                <h3>IMPACT IN – مدير التميز والجودة</h3>
-                <span class="date-badge">أغسطس 2024 - حتى الآن</span>
+                <h3 data-ar="IMPACT IN – مدير التميز والجودة" data-en="IMPACT IN – Excellence & Quality Director">IMPACT IN – مدير التميز والجودة</h3>
+                <span class="date-badge" data-ar="أغسطس 2024 - حتى الآن" data-en="August 2024 - Present">أغسطس 2024 - حتى الآن</span>
             </div>
-            <p class="experience-intro">
-                يشغل حالياً منصب مدير التميز والجودة في شركة IMPACT IN الاستشارية، حيث يقود مشاريع استراتيجية لتحقيق التميز المؤسسي للجهات الحكومية والخاصة، مع التركيز على تطبيق معايير التميز العالمية والمحلية وتحقيق الاعتمادات الدولية.
-            </p>
+            <p class="experience-intro" data-ar="يشغل حالياً منصب مدير التميز والجودة في شركة IMPACT IN الاستشارية، حيث يقود مشاريع استراتيجية لتحقيق التميز المؤسسي للجهات الحكومية والخاصة، مع التركيز على تطبيق معايير التميز العالمية والمحلية وتحقيق الاعتمادات الدولية." data-en="Currently serving as Excellence & Quality Director at IMPACT IN Consulting, leading strategic projects to achieve organizational excellence for government and private entities, focusing on implementing international and local excellence standards and achieving global accreditations.">يشغل حالياً منصب مدير التميز والجودة في شركة IMPACT IN الاستشارية، حيث يقود مشاريع استراتيجية لتحقيق التميز المؤسسي للجهات الحكومية والخاصة، مع التركيز على تطبيق معايير التميز العالمية والمحلية وتحقيق الاعتمادات الدولية.</p>
             
-            <h4 class="projects-subtitle">المشاريع الرئيسية المنفذة:</h4>
+            <h4 class="projects-subtitle" data-ar="المشاريع الرئيسية المنفذة:" data-en="Key Executed Projects:">المشاريع الرئيسية المنفذة:</h4>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-number="01">
                     <div class="project-number">01</div>
-                    <h4>جائزة عجمان للتميز - برنامج 7 نجوم</h4>
-                    <p><strong>شرطة عجمان</strong></p>
-                    <p class="project-details">
-                        قيادة المشروع الشامل لتطبيق معايير جائزة عجمان للتميز ونظام التصنيف العالمي بالنجوم (7 نجوم) للقيادة العامة لشرطة عجمان.
-                    </p>
+                    <h4 data-ar="جائزة عجمان للتميز - برنامج 7 نجوم" data-en="Ajman Excellence Award - 7 Stars Program">جائزة عجمان للتميز - برنامج 7 نجوم</h4>
+                    <p><strong data-ar="شرطة عجمان" data-en="Ajman Police">شرطة عجمان</strong></p>
+                    <p class="project-details" data-ar="قيادة المشروع الشامل لتطبيق معايير جائزة عجمان للتميز ونظام التصنيف العالمي بالنجوم (7 نجوم) للقيادة العامة لشرطة عجمان، بما يشمل تقييم شامل للأداء المؤسسي، تطوير خطط التحسين، وتحقيق التميز في جميع معايير الجائزة." data-en="Leading a comprehensive project to implement Ajman Excellence Award standards and the Global Star Rating System (7 Stars) for Ajman Police General Command, including comprehensive organizational performance assessment, development of improvement plans, and achieving excellence in all award criteria.">قيادة المشروع الشامل لتطبيق معايير جائزة عجمان للتميز ونظام التصنيف العالمي بالنجوم (7 نجوم) للقيادة العامة لشرطة عجمان، بما يشمل تقييم شامل للأداء المؤسسي، تطوير خطط التحسين، وتحقيق التميز في جميع معايير الجائزة.</p>
                     <div class="project-tags">
-                        <span class="tag">التميز المؤسسي</span>
-                        <span class="tag">جوائز</span>
-                        <span class="tag">7 نجوم</span>
+                        <span class="tag" data-ar="التميز المؤسسي" data-en="Organizational Excellence">التميز المؤسسي</span>
+                        <span class="tag" data-ar="جوائز" data-en="Awards">جوائز</span>
+                        <span class="tag" data-ar="7 نجوم" data-en="7 Stars">7 نجوم</span>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-number="02">
                     <div class="project-number">02</div>
-                    <h4>برنامج 7 نجوم للخدمات</h4>
-                    <p><strong>شرطة عجمان</strong></p>
-                    <p class="project-details">
-                        تطبيق نظام التصنيف العالمي بالنجوم على مراكز الخدمة والإدارات الرئيسية، شمل تحليل رحلة العميل وتحسين الخدمات.
-                    </p>
+                    <h4 data-ar="برنامج 7 نجوم للخدمات" data-en="7 Stars Service Program">برنامج 7 نجوم للخدمات</h4>
+                    <p><strong data-ar="شرطة عجمان" data-en="Ajman Police">شرطة عجمان</strong></p>
+                    <p class="project-details" data-ar="تطبيق نظام التصنيف العالمي بالنجوم على مراكز الخدمة والإدارات الرئيسية، شمل تحليل رحلة العميل، تحسين الخدمات، تطوير معايير الأداء، وتدريب الفرق على تطبيق أفضل ممارسات خدمة المتعاملين." data-en="Implementing the Global Star Rating System for service centers and main departments, including customer journey analysis, service improvement, performance standards development, and training teams on best practices in customer service.">تطبيق نظام التصنيف العالمي بالنجوم على مراكز الخدمة والإدارات الرئيسية، شمل تحليل رحلة العميل، تحسين الخدمات، تطوير معايير الأداء، وتدريب الفرق على تطبيق أفضل ممارسات خدمة المتعاملين.</p>
                     <div class="project-tags">
-                        <span class="tag">تصنيف الخدمات</span>
-                        <span class="tag">تحسين العمليات</span>
+                        <span class="tag" data-ar="تصنيف الخدمات" data-en="Service Classification">تصنيف الخدمات</span>
+                        <span class="tag" data-ar="تحسين العمليات" data-en="Process Improvement">تحسين العمليات</span>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-number="03">
                     <div class="project-number">03</div>
-                    <h4>برنامج 7 نجوم</h4>
-                    <p><strong>وزارة الصناعة والتكنولوجيا المتقدمة</strong></p>
-                    <p class="project-details">
-                        تنفيذ مشروع متكامل لتطبيق نظام التصنيف العالمي بالنجوم على خدمات الوزارة، تضمن إعادة تصميم رحلات العملاء.
-                    </p>
+                    <h4 data-ar="برنامج 7 نجوم" data-en="7 Stars Program">برنامج 7 نجوم</h4>
+                    <p><strong data-ar="وزارة الصناعة والتكنولوجيا المتقدمة" data-en="Ministry of Industry and Advanced Technology">وزارة الصناعة والتكنولوجيا المتقدمة</strong></p>
+                    <p class="project-details" data-ar="تنفيذ مشروع متكامل لتطبيق نظام التصنيف العالمي بالنجوم على خدمات الوزارة، تضمن إعادة تصميم رحلات العملاء، رفع مستوى الخدمات الحكومية، وتحقيق معايير التميز في تقديم الخدمات للمتعاملين." data-en="Implementing an integrated project to apply the Global Star Rating System to ministry services, including redesigning customer journeys, elevating government service levels, and achieving excellence standards in service delivery to customers.">تنفيذ مشروع متكامل لتطبيق نظام التصنيف العالمي بالنجوم على خدمات الوزارة، تضمن إعادة تصميم رحلات العملاء، رفع مستوى الخدمات الحكومية، وتحقيق معايير التميز في تقديم الخدمات للمتعاملين.</p>
                     <div class="project-tags">
-                        <span class="tag">تحسين الخدمات</span>
-                        <span class="tag">رحلة العميل</span>
+                        <span class="tag" data-ar="تحسين الخدمات" data-en="Service Improvement">تحسين الخدمات</span>
+                        <span class="tag" data-ar="رحلة العميل" data-en="Customer Journey">رحلة العميل</span>
+                    </div>
+                </div>
+                <div class="project-card" data-number="04">
+                    <div class="project-number">04</div>
+                    <h4 data-ar="تطوير نظام إدارة الموارد البشرية" data-en="HR Management System Development">تطوير نظام إدارة الموارد البشرية</h4>
+                    <p><strong data-ar="مشاريع متعددة" data-en="Multiple Projects">مشاريع متعددة</strong></p>
+                    <p class="project-details" data-ar="تصميم وتطبيق أنظمة متكاملة لإدارة الموارد البشرية تشمل تطوير الهياكل التنظيمية، سياسات الموارد البشرية، أنظمة تقييم الأداء، وبرامج تطوير المواهب والقدرات المؤسسية." data-en="Designing and implementing integrated HR management systems including organizational structure development, HR policies, performance evaluation systems, and talent and institutional capacity development programs.">تصميم وتطبيق أنظمة متكاملة لإدارة الموارد البشرية تشمل تطوير الهياكل التنظيمية، سياسات الموارد البشرية، أنظمة تقييم الأداء، وبرامج تطوير المواهب والقدرات المؤسسية.</p>
+                    <div class="project-tags">
+                        <span class="tag">HR</span>
+                        <span class="tag" data-ar="تطوير مؤسسي" data-en="Organizational Development">تطوير مؤسسي</span>
+                    </div>
+                </div>
+                <div class="project-card" data-number="05">
+                    <div class="project-number">05</div>
+                    <h4 data-ar="شهادات ISO المتخصصة" data-en="Specialized ISO Certifications">شهادات ISO المتخصصة</h4>
+                    <p><strong data-ar="جهات متعددة" data-en="Multiple Entities">جهات متعددة</strong></p>
+                    <p class="project-details" data-ar="قيادة مشاريع الحصول على شهادات ISO المتخصصة (ISO 9001 لإدارة الجودة، ISO 10002 لإدارة شكاوى العملاء، وغيرها)، شملت تطوير الأنظمة، توثيق الإجراءات، التدريب، والمراجعات الداخلية." data-en="Leading projects to obtain specialized ISO certifications (ISO 9001 for Quality Management, ISO 10002 for Customer Complaint Management, and others), including system development, procedure documentation, training, and internal audits.">قيادة مشاريع الحصول على شهادات ISO المتخصصة (ISO 9001 لإدارة الجودة، ISO 10002 لإدارة شكاوى العملاء، وغيرها)، شملت تطوير الأنظمة، توثيق الإجراءات، التدريب، والمراجعات الداخلية.</p>
+                    <div class="project-tags">
+                        <span class="tag">ISO 9001</span>
+                        <span class="tag">ISO 10002</span>
+                        <span class="tag" data-ar="جودة" data-en="Quality">جودة</span>
+                    </div>
+                </div>
+                <div class="project-card" data-number="06">
+                    <div class="project-number">06</div>
+                    <h4 data-ar="صفر بيروقراطية حكومية" data-en="Zero Government Bureaucracy">صفر بيروقراطية حكومية</h4>
+                    <p><strong data-ar="مقيم معتمد" data-en="Certified Assessor">مقيم معتمد</strong></p>
+                    <p class="project-details" data-ar="المشاركة كمقيم رئيسي معتمد في برنامج صفر بيروقراطية الحكومي، لتقييم الجهات الحكومية وفق معايير البرنامج، تحليل الإجراءات الحكومية، وتقديم التوصيات لتبسيط وتسريع الخدمات الحكومية." data-en="Participating as a certified lead assessor in the Zero Government Bureaucracy program, evaluating government entities according to program standards, analyzing government procedures, and providing recommendations to simplify and accelerate government services.">المشاركة كمقيم رئيسي معتمد في برنامج صفر بيروقراطية الحكومي، لتقييم الجهات الحكومية وفق معايير البرنامج، تحليل الإجراءات الحكومية، وتقديم التوصيات لتبسيط وتسريع الخدمات الحكومية.</p>
+                    <div class="project-tags">
+                        <span class="tag" data-ar="تبسيط الإجراءات" data-en="Procedure Simplification">تبسيط الإجراءات</span>
+                        <span class="tag" data-ar="تقييم" data-en="Assessment">تقييم</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ministry of Health Experience -->
+    <!-- Page 7-8: Ministry of Health Experience -->
     <section class="experience-section ministry-section">
         <div class="container">
             <div class="experience-header">
                 <div>
                     <div class="role-badges">
-                        <span class="role-badge">خبير نظام التصنيف العالمي بالنجوم</span>
-                        <span class="role-badge">صفر بيروقراطية حكومية - مقيم رئيسي</span>
+                        <span class="role-badge" data-ar="خبير نظام التصنيف العالمي بالنجوم" data-en="Global Star Rating System Expert">خبير نظام التصنيف العالمي بالنجوم</span>
+                        <span class="role-badge" data-ar="صفر بيروقراطية حكومية - مقيم رئيسي" data-en="Zero Bureaucracy - Lead Assessor">صفر بيروقراطية حكومية - مقيم رئيسي</span>
                     </div>
-                    <h3>وزارة الصحة ووقاية المجتمع - خبير التميز المؤسسي وتحسين الخدمات</h3>
+                    <h3 data-ar="وزارة الصحة ووقاية المجتمع - خبير التميز المؤسسي وتحسين الخدمات" data-en="Ministry of Health and Prevention - Organizational Excellence & Service Improvement Expert">وزارة الصحة ووقاية المجتمع - خبير التميز المؤسسي وتحسين الخدمات</h3>
                 </div>
-                <span class="date-badge">يوليو 2022 - نوفمبر 2024</span>
+                <span class="date-badge" data-ar="يوليو 2022 - نوفمبر 2024" data-en="July 2022 - November 2024">يوليو 2022 - نوفمبر 2024</span>
             </div>
 
             <div class="achievements-highlights">
                 <div class="achievement-box">
                     <i class="fas fa-globe"></i>
-                    <span>تطبيق معايير عالمية</span>
+                    <span data-ar="تطبيق معايير عالمية" data-en="Implementing Global Standards">تطبيق معايير عالمية</span>
                 </div>
                 <div class="achievement-box">
                     <i class="fas fa-building"></i>
-                    <span>تأسيس قسمين استراتيجيين</span>
+                    <span data-ar="تأسيس قسمين استراتيجيين" data-en="Establishing Two Strategic Departments">تأسيس قسمين استراتيجيين</span>
                 </div>
                 <div class="achievement-box">
                     <i class="fas fa-tools"></i>
-                    <span>إعادة هندسة 151 خدمة</span>
+                    <span data-ar="إعادة هندسة 151 خدمة" data-en="Reengineering 151 Services">إعادة هندسة 151 خدمة</span>
                 </div>
                 <div class="achievement-box">
                     <i class="fas fa-lightbulb"></i>
-                    <span>التصميم والابتكار</span>
+                    <span data-ar="التصميم والابتكار" data-en="Design & Innovation">التصميم والابتكار</span>
                 </div>
             </div>
 
             <div class="responsibilities-list">
                 <div class="responsibility-item">
-                    <h4><span class="number">أولاً:</span> <span>مدير مشروع إعادة هندسة الخدمات</span></h4>
+                    <h4><span class="number" data-ar="أولاً:" data-en="First:">أولاً:</span> <span data-ar="مدير مشروع إعادة هندسة الخدمات" data-en="Service Reengineering Project Manager">مدير مشروع إعادة هندسة الخدمات</span></h4>
                     <ul>
-                        <li>قيادة مشروع شامل لإعادة تصميم وتحسين 151 خدمة حكومية</li>
-                        <li>تطبيق منهجيات التصميم المرتكز على الإنسان</li>
-                        <li>تحليل رحلة العميل وتحديد نقاط الألم وفرص التحسين</li>
+                        <li data-ar="قيادة مشروع شامل لإعادة تصميم وتحسين 151 خدمة حكومية" data-en="Leading a comprehensive project to redesign and improve 151 government services">قيادة مشروع شامل لإعادة تصميم وتحسين 151 خدمة حكومية</li>
+                        <li data-ar="تطبيق منهجيات التصميم المرتكز على الإنسان (Human-Centered Design)" data-en="Applying Human-Centered Design methodologies">تطبيق منهجيات التصميم المرتكز على الإنسان (Human-Centered Design)</li>
+                        <li data-ar="تحليل رحلة العميل وتحديد نقاط الألم وفرص التحسين" data-en="Analyzing customer journey and identifying pain points and improvement opportunities">تحليل رحلة العميل وتحديد نقاط الألم وفرص التحسين</li>
+                        <li data-ar="تطوير نماذج أولية واختبارها مع المستخدمين" data-en="Developing prototypes and testing them with users">تطوير نماذج أولية واختبارها مع المستخدمين</li>
                     </ul>
                 </div>
 
                 <div class="responsibility-item">
-                    <h4><span class="number">ثانياً:</span> <span>تأسيس قسم قيادة الخدمات</span></h4>
+                    <h4><span class="number" data-ar="ثانياً:" data-en="Second:">ثانياً:</span> <span data-ar="تأسيس قسم قيادة الخدمات" data-en="Establishing Service Leadership Department">تأسيس قسم قيادة الخدمات</span></h4>
                     <ul>
-                        <li>إنشاء وتأسيس قسم متخصص لقيادة وتحسين الخدمات الحكومية</li>
-                        <li>تطوير استراتيجيات وسياسات إدارة الخدمات</li>
-                        <li>بناء فريق عمل متخصص وتدريبه على أفضل الممارسات</li>
+                        <li data-ar="إنشاء وتأسيس قسم متخصص لقيادة وتحسين الخدمات الحكومية" data-en="Creating and establishing a specialized department for leading and improving government services">إنشاء وتأسيس قسم متخصص لقيادة وتحسين الخدمات الحكومية</li>
+                        <li data-ar="تطوير استراتيجيات وسياسات إدارة الخدمات" data-en="Developing service management strategies and policies">تطوير استراتيجيات وسياسات إدارة الخدمات</li>
+                        <li data-ar="بناء فريق عمل متخصص وتدريبه على أفضل الممارسات" data-en="Building a specialized team and training it on best practices">بناء فريق عمل متخصص وتدريبه على أفضل الممارسات</li>
+                        <li data-ar="وضع معايير قياس جودة الخدمات ومتابعة الأداء" data-en="Setting service quality measurement standards and performance monitoring">وضع معايير قياس جودة الخدمات ومتابعة الأداء</li>
+                    </ul>
+                </div>
+
+                <div class="responsibility-item">
+                    <h4><span class="number" data-ar="ثالثاً:" data-en="Third:">ثالثاً:</span> <span data-ar="تأسيس قسم الاستدامة والمسؤولية الاجتماعية" data-en="Establishing Sustainability and Social Responsibility Department">تأسيس قسم الاستدامة والمسؤولية الاجتماعية</span></h4>
+                    <ul>
+                        <li data-ar="تأسيس قسم جديد لتعزيز الاستدامة المؤسسية" data-en="Establishing a new department to enhance institutional sustainability">تأسيس قسم جديد لتعزيز الاستدامة المؤسسية</li>
+                        <li data-ar="تطوير استراتيجية الاستدامة والمسؤولية الاجتماعية للوزارة" data-en="Developing ministry sustainability and social responsibility strategy">تطوير استراتيجية الاستدامة والمسؤولية الاجتماعية للوزارة</li>
+                        <li data-ar="تنفيذ مبادرات بيئية واجتماعية مبتكرة" data-en="Implementing innovative environmental and social initiatives">تنفيذ مبادرات بيئية واجتماعية مبتكرة</li>
+                        <li data-ar="قياس الأثر الاجتماعي والبيئي للمشاريع والخدمات" data-en="Measuring social and environmental impact of projects and services">قياس الأثر الاجتماعي والبيئي للمشاريع والخدمات</li>
+                    </ul>
+                </div>
+
+                <div class="responsibility-item">
+                    <h4><span class="number" data-ar="رابعاً:" data-en="Fourth:">رابعاً:</span> <span data-ar="مدير مشروع مبادرة تجميع الاستدامة" data-en="Sustainability Aggregation Initiative Project Manager">مدير مشروع مبادرة تجميع الاستدامة</span></h4>
+                    <ul>
+                        <li data-ar="قيادة مبادرة شاملة لتجميع وتوحيد جهود الاستدامة" data-en="Leading a comprehensive initiative to aggregate and unify sustainability efforts">قيادة مبادرة شاملة لتجميع وتوحيد جهود الاستدامة</li>
+                        <li data-ar="تطوير مؤشرات أداء لقياس التقدم في الاستدامة" data-en="Developing KPIs to measure sustainability progress">تطوير مؤشرات أداء لقياس التقدم في الاستدامة</li>
+                        <li data-ar="التنسيق مع مختلف الجهات الداخلية والخارجية" data-en="Coordinating with various internal and external entities">التنسيق مع مختلف الجهات الداخلية والخارجية</li>
+                        <li data-ar="إعداد تقارير دورية عن إنجازات الاستدامة" data-en="Preparing periodic reports on sustainability achievements">إعداد تقارير دورية عن إنجازات الاستدامة</li>
+                    </ul>
+                </div>
+
+                <div class="responsibility-item">
+                    <h4><span class="number" data-ar="خامساً:" data-en="Fifth:">خامساً:</span> <span data-ar="نموذج التميز الحكومي (GEM 2.1)" data-en="Government Excellence Model (GEM 2.1)">نموذج التميز الحكومي (GEM 2.1)</span></h4>
+                    <ul>
+                        <li data-ar="تطبيق معايير نموذج التميز الحكومي الإماراتي الإصدار 2.1" data-en="Implementing UAE Government Excellence Model version 2.1 standards">تطبيق معايير نموذج التميز الحكومي الإماراتي الإصدار 2.1</li>
+                        <li data-ar="إجراء تقييم ذاتي شامل لأداء الوزارة" data-en="Conducting comprehensive self-assessment of ministry performance">إجراء تقييم ذاتي شامل لأداء الوزارة</li>
+                        <li data-ar="تطوير خطط تحسين بناءً على فجوات التميز" data-en="Developing improvement plans based on excellence gaps">تطوير خطط تحسين بناءً على فجوات التميز</li>
+                        <li data-ar="التحضير للجوائز والاعتمادات الحكومية" data-en="Preparing for government awards and accreditations">التحضير للجوائز والاعتمادات الحكومية</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Previous Experience -->
+    <!-- Page 9-10: Ethos Experience -->
+    <section class="experience-section ethos-section">
+        <div class="container">
+            <div class="experience-header">
+                <h3 data-ar="مدير التعلم والتطوير الاستشاري - Ethos Integrated Solutions" data-en="Learning & Development Consulting Manager - Ethos Integrated Solutions">مدير التعلم والتطوير الاستشاري - Ethos Integrated Solutions</h3>
+                <span class="date-badge" data-ar="نوفمبر 2017 - نوفمبر 2022" data-en="November 2017 - November 2022">نوفمبر 2017 - نوفمبر 2022</span>
+            </div>
+
+            <p class="experience-intro" data-ar="شغل منصب مدير التعلم والتطوير الاستشاري في شركة إيثوس للحلول المتكاملة، إحدى الشركات الرائدة في مجال الاستشارات الإدارية والتميز المؤسسي في دولة الإمارات. خلال هذه الفترة، قاد وأشرف على أكثر من 21 مشروعاً استشارياً كبيراً مع أبرز الجهات الحكومية الاتحادية والمحلية، محققاً نسبة نجاح 100% في جميع المشاريع المنفذة." data-en="Served as Learning & Development Consulting Manager at Ethos Integrated Solutions, one of the leading companies in management consulting and organizational excellence in the UAE. During this period, led and supervised over 21 major consulting projects with prominent federal and local government entities, achieving a 100% success rate in all executed projects.">شغل منصب مدير التعلم والتطوير الاستشاري في شركة إيثوس للحلول المتكاملة، إحدى الشركات الرائدة في مجال الاستشارات الإدارية والتميز المؤسسي في دولة الإمارات. خلال هذه الفترة، قاد وأشرف على أكثر من 21 مشروعاً استشارياً كبيراً مع أبرز الجهات الحكومية الاتحادية والمحلية، محققاً نسبة نجاح 100% في جميع المشاريع المنفذة.</p>
+
+            <div class="ethos-stats">
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label" data-ar="نسبة نجاح المشاريع" data-en="Project Success Rate">نسبة نجاح المشاريع</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="stat-value">5</div>
+                    <div class="stat-label" data-ar="سنوات من التميز" data-en="Years of Excellence">سنوات من التميز</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="stat-value">+21</div>
+                    <div class="stat-label" data-ar="مشروع استشاري منجز" data-en="Completed Consulting Projects">مشروع استشاري منجز</div>
+                </div>
+            </div>
+
+            <h4 class="projects-category-title" data-ar="مشاريع نظام التصنيف العالمي بالنجوم والتميز:" data-en="Global Star Rating System & Excellence Projects:">مشاريع نظام التصنيف العالمي بالنجوم والتميز:</h4>
+            <div class="major-projects-grid">
+                <div class="major-project-card">
+                    <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4 data-ar="شرطة أبوظبي" data-en="Abu Dhabi Police">شرطة أبوظبي</h4>
+                    <p><strong data-ar="مشروع نظام التصنيف العالمي بالنجوم للخدمات" data-en="Global Star Rating System Project for Services">مشروع نظام التصنيف العالمي بالنجوم للخدمات</strong></p>
+                    <p class="project-details-small" data-ar="تطبيق شامل لنظام التصنيف العالمي بالنجوم على خدمات القيادة العامة لشرطة أبوظبي، شمل تحليل وتقييم الخدمات، تطوير معايير الأداء، وتدريب الفرق على أفضل الممارسات العالمية." data-en="Comprehensive implementation of the Global Star Rating System for Abu Dhabi Police services, including service analysis and evaluation, performance standards development, and training teams on global best practices.">تطبيق شامل لنظام التصنيف العالمي بالنجوم على خدمات القيادة العامة لشرطة أبوظبي، شمل تحليل وتقييم الخدمات، تطوير معايير الأداء، وتدريب الفرق على أفضل الممارسات العالمية.</p>
+                </div>
+                <div class="major-project-card">
+                    <div class="project-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h4 data-ar="وزارة الداخلية" data-en="Ministry of Interior">وزارة الداخلية</h4>
+                    <p><strong data-ar="تنفيذ كامل برنامج 7 نجوم لمراكز إسعاد المتعاملين" data-en="Complete Implementation of 7 Stars Program for Customer Happiness Centers">تنفيذ كامل برنامج 7 نجوم لمراكز إسعاد المتعاملين</strong></p>
+                    <p class="project-details-small" data-ar="قيادة التنفيذ الكامل لبرنامج 7 نجوم لمراكز إسعاد المتعاملين، يشمل جميع ركائز البرنامج من استشارات، تقييم، قياس، وتطوير." data-en="Leading complete implementation of 7 Stars program for customer happiness centers, including all program pillars: consultancy, evaluation, measurement, and development.">قيادة التنفيذ الكامل لبرنامج 7 نجوم لمراكز إسعاد المتعاملين، يشمل جميع ركائز البرنامج من استشارات، تقييم، قياس، وتطوير.</p>
+                </div>
+                <div class="major-project-card">
+                    <div class="project-icon"><i class="fas fa-hospital"></i></div>
+                    <h4 data-ar="مؤسسة الإمارات للخدمات الصحية" data-en="Emirates Health Services">مؤسسة الإمارات للخدمات الصحية</h4>
+                    <p><strong data-ar="ركيزتان: الاستشارات والقياس لنظام التصنيف العالمي" data-en="Two Pillars: Consultancy and Measurement for Global Rating System">ركيزتان: الاستشارات والقياس لنظام التصنيف العالمي</strong></p>
+                    <p class="project-details-small" data-ar="تقديم الاستشارات الفنية المتخصصة وإجراء القياسات الميدانية لتطبيق نظام التصنيف بالنجوم على المنشآت الصحية التابعة للمؤسسة." data-en="Providing specialized technical consultancy and conducting field measurements for implementing star rating system in health facilities.">تقديم الاستشارات الفنية المتخصصة وإجراء القياسات الميدانية لتطبيق نظام التصنيف بالنجوم على المنشآت الصحية التابعة للمؤسسة.</p>
+                </div>
+                <div class="major-project-card">
+                    <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h4 data-ar="وزارة الصحة ووقاية المجتمع" data-en="Ministry of Health and Prevention">وزارة الصحة ووقاية المجتمع</h4>
+                    <p><strong data-ar="3 مشاريع شاملة تتضمن ركائز: الاستشارات، التقييم، والقياس" data-en="3 Comprehensive Projects Including: Consultancy, Evaluation, and Measurement">3 مشاريع شاملة تتضمن ركائز: الاستشارات، التقييم، والقياس</strong></p>
+                    <p class="project-details-small" data-ar="تنفيذ ثلاثة مشاريع متكاملة لوزارة الصحة، شملت جميع جوانب تطبيق نظام التصنيف بالنجوم بما في ذلك الاستشارات الفنية، التقييم المؤسسي، والقياسات الميدانية." data-en="Implementing three integrated projects for Ministry of Health, covering all aspects of star rating system including technical consultancy, institutional evaluation, and field measurements.">تنفيذ ثلاثة مشاريع متكاملة لوزارة الصحة، شملت جميع جوانب تطبيق نظام التصنيف بالنجوم بما في ذلك الاستشارات الفنية، التقييم المؤسسي، والقياسات الميدانية.</p>
+                </div>
+            </div>
+
+            <h4 class="projects-category-title" data-ar="مشاريع إضافية مع جهات حكومية رائدة:" data-en="Additional Projects with Leading Government Entities:">مشاريع إضافية مع جهات حكومية رائدة:</h4>
+            <div class="additional-projects-grid">
+                <div class="small-project-card">
+                    <div class="project-num">01</div>
+                    <h5 data-ar="شرطة دبي" data-en="Dubai Police">شرطة دبي</h5>
+                    <p><strong data-ar="تنفيذ كامل برنامج 7 نجوم لأربعة مراكز شرطة" data-en="Complete Implementation of 7 Stars Program for Four Police Stations">تنفيذ كامل برنامج 7 نجوم لأربعة مراكز شرطة</strong></p>
+                    <p class="mini-details" data-ar="مشروع شامل لتطبيق نظام التصنيف العالمي بالنجوم على 4 مراكز شرطة رئيسية، شمل تحليل الخدمات، تطوير المعايير، التدريب، والقياس الميداني." data-en="Comprehensive project to implement Global Star Rating System for 4 main police stations, including service analysis, standards development, training, and field measurement.">مشروع شامل لتطبيق نظام التصنيف العالمي بالنجوم على 4 مراكز شرطة رئيسية، شمل تحليل الخدمات، تطوير المعايير، التدريب، والقياس الميداني.</p>
+                </div>
+                <div class="small-project-card">
+                    <div class="project-num">02</div>
+                    <h5 data-ar="الهيئة الاتحادية للهوية والجنسية والجمارك وأمن المنافذ" data-en="Federal Authority for Identity, Citizenship, Customs & Port Security">الهيئة الاتحادية للهوية والجنسية والجمارك وأمن المنافذ</h5>
+                    <p><strong data-ar="مراكز إسعاد المتعاملين مع مخرجات مؤسسية شاملة" data-en="Customer Happiness Centers with Comprehensive Institutional Outputs">مراكز إسعاد المتعاملين مع مخرجات مؤسسية شاملة</strong></p>
+                    <p class="mini-details" data-ar="تطوير مراكز إسعاد المتعاملين وفق أعلى المعايير، مع تطوير دليل خدمات شامل، معايير الأداء، ومؤشرات القياس." data-en="Developing customer happiness centers according to highest standards, with comprehensive service manual, performance standards, and measurement indicators.">تطوير مراكز إسعاد المتعاملين وفق أعلى المعايير، مع تطوير دليل خدمات شامل، معايير الأداء، ومؤشرات القياس.</p>
+                </div>
+                <div class="small-project-card">
+                    <div class="project-num">03</div>
+                    <h5 data-ar="هيئة الصحة بدبي" data-en="Dubai Health Authority">هيئة الصحة بدبي</h5>
+                    <p><strong data-ar="مركز إسعاد المتعاملين وتطوير ميثاق المتعاملين - 2019" data-en="Customer Happiness Center and Customer Charter Development - 2019">مركز إسعاد المتعاملين وتطوير ميثاق المتعاملين - 2019</strong></p>
+                    <p class="mini-details" data-ar="تصميم وتطوير مركز إسعاد متعاملين متكامل، مع تطوير ميثاق المتعاملين وفق أفضل الممارسات العالمية في خدمة العملاء." data-en="Designing and developing an integrated customer happiness center, with customer charter development following global best practices in customer service.">تصميم وتطوير مركز إسعاد متعاملين متكامل، مع تطوير ميثاق المتعاملين وفق أفضل الممارسات العالمية في خدمة العملاء.</p>
+                </div>
+                <div class="small-project-card">
+                    <div class="project-num">04</div>
+                    <h5 data-ar="هيئة الطرق والمواصلات دبي" data-en="Roads and Transport Authority Dubai">هيئة الطرق والمواصلات دبي</h5>
+                    <p><strong data-ar="ثلاثة مراكز إسعاد متعاملين بالمعيار الجديد - 2020" data-en="Three Customer Happiness Centers with New Standards - 2020">ثلاثة مراكز إسعاد متعاملين بالمعيار الجديد - 2020</strong></p>
+                    <p class="mini-details" data-ar="تطبيق المعيار الجديد لنظام التصنيف بالنجوم على 3 مراكز رئيسية، مع التركيز على التحول الرقمي وتحسين تجربة المتعاملين." data-en="Implementing the new star rating system standard on 3 main centers, focusing on digital transformation and improving customer experience.">تطبيق المعيار الجديد لنظام التصنيف بالنجوم على 3 مراكز رئيسية، مع التركيز على التحول الرقمي وتحسين تجربة المتعاملين.</p>
+                </div>
+                <div class="small-project-card">
+                    <div class="project-num">05</div>
+                    <h5 data-ar="دائرة الأراضي والتنظيم العقاري عجمان" data-en="Ajman Real Estate Regulatory Agency">دائرة الأراضي والتنظيم العقاري عجمان</h5>
+                    <p><strong data-ar="تنفيذ كامل للمعيار الجديد" data-en="Complete Implementation of New Standards">تنفيذ كامل للمعيار الجديد</strong></p>
+                    <p class="mini-details" data-ar="مشروع متكامل لتطبيق نظام التصنيف العالمي بالنجوم وفق المعيار الجديد، شمل جميع المراحل من التقييم إلى التطبيق والقياس." data-en="An integrated project to implement the Global Star Rating System according to new standards, covering all phases from assessment to implementation and measurement.">مشروع متكامل لتطبيق نظام التصنيف العالمي بالنجوم وفق المعيار الجديد، شمل جميع المراحل من التقييم إلى التطبيق والقياس.</p>
+                </div>
+                <div class="small-project-card">
+                    <div class="project-num">06</div>
+                    <h5 data-ar="التدريب والتقييم" data-en="Training and Assessment">التدريب والتقييم</h5>
+                    <p><strong data-ar="هيئة الطرق والمواصلات، بلدية عجمان، بلدية أبوظبي" data-en="RTA, Ajman Municipality, Abu Dhabi Municipality">هيئة الطرق والمواصلات، بلدية عجمان، بلدية أبوظبي</strong></p>
+                    <p class="mini-details" data-ar="تقديم برامج تدريبية متخصصة وإجراء تقييمات شاملة لمراكز الخدمة في عدة جهات حكومية، لضمان الالتزام بمعايير التميز." data-en="Providing specialized training programs and conducting comprehensive assessments for service centers in multiple government entities to ensure compliance with excellence standards.">تقديم برامج تدريبية متخصصة وإجراء تقييمات شاملة لمراكز الخدمة في عدة جهات حكومية، لضمان الالتزام بمعايير التميز.</p>
+                </div>
+                <div class="small-project-card">
+                    <div class="project-num">07</div>
+                    <h5 data-ar="دائرة الأراضي والتنظيم العقاري - عجمان" data-en="Ajman Real Estate Regulatory Agency">دائرة الأراضي والتنظيم العقاري - عجمان</h5>
+                    <p><strong data-ar="تنفيذ كامل للمعيار القديم لبرنامج 7 نجوم" data-en="Complete Implementation of Old 7 Stars Program Standards">تنفيذ كامل للمعيار القديم لبرنامج 7 نجوم</strong></p>
+                    <p class="mini-details" data-ar="تطبيق المعايير الأساسية لنظام التصنيف بالنجوم، مع تطوير خطط تحسين شاملة لرفع مستوى الخدمات المقدمة." data-en="Implementing basic star rating system standards, with development of comprehensive improvement plans to elevate service levels.">تطبيق المعايير الأساسية لنظام التصنيف بالنجوم، مع تطوير خطط تحسين شاملة لرفع مستوى الخدمات المقدمة.</p>
+                </div>
+                <div class="small-project-card">
+                    <div class="project-num">08</div>
+                    <h5 data-ar="بلدية دبي" data-en="Dubai Municipality">بلدية دبي</h5>
+                    <p><strong data-ar="برنامج 7 نجوم-1 مركز DGEP وتحسين 14 خدمة - 2020" data-en="7 Stars Program - 1 DGEP Center and 14 Services Improvement - 2020">برنامج 7 نجوم-1 مركز DGEP وتحسين 14 خدمة - 2020</strong></p>
+                    <p class="mini-details" data-ar="مشروع مزدوج يجمع بين تطبيق نظام التصنيف بالنجوم ومشروع التميز الحكومي، مع إعادة هندسة وتحسين 14 خدمة حكومية رئيسية." data-en="A dual project combining star rating system implementation and government excellence project, with reengineering and improving 14 key government services.">مشروع مزدوج يجمع بين تطبيق نظام التصنيف بالنجوم ومشروع التميز الحكومي، مع إعادة هندسة وتحسين 14 خدمة حكومية رئيسية.</p>
+                </div>
+                <div class="small-project-card">
+                    <div class="project-num">09</div>
+                    <h5 data-ar="وزارة الداخلية" data-en="Ministry of Interior">وزارة الداخلية</h5>
+                    <p><strong data-ar="13 مركز شرطة ورسم 24 خدمة وتحسينها - 2020/2021" data-en="13 Police Stations and Mapping & Improving 24 Services - 2020/2021">13 مركز شرطة ورسم 24 خدمة وتحسينها - 2020/2021</strong></p>
+                    <p class="mini-details" data-ar="مشروع واسع النطاق شمل تطبيق نظام التصنيف بالنجوم على 13 مركز شرطة، مع رسم وتحليل وتحسين 24 خدمة أمنية وشرطية." data-en="Large-scale project implementing star rating system on 13 police stations, with mapping, analysis and improvement of 24 security and police services.">مشروع واسع النطاق شمل تطبيق نظام التصنيف بالنجوم على 13 مركز شرطة، مع رسم وتحليل وتحسين 24 خدمة أمنية وشرطية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 11: Previous Experience & Certifications -->
     <section id="certifications" class="certifications-section">
         <div class="container">
-            <h2 class="section-title">الخبرة السابقة والشهادات</h2>
-            
             <div class="two-column-layout">
-                <!-- Previous Experience Column -->
                 <div class="previous-experience-column">
-                    <h3>الخبرة السابقة</h3>
+                    <h2 class="section-title" data-ar="الخبرة السابقة" data-en="Previous Experience">الخبرة السابقة</h2>
                     <div class="previous-jobs">
                         <div class="previous-job-card">
-                            <h4>PDCA للاستشارات الإدارية</h4>
-                            <p class="job-role">مستشار التميز المؤسسي</p>
+                            <div class="job-number">01</div>
+                            <h4 data-ar="PDCA للاستشارات الإدارية" data-en="PDCA Management Consultancy">PDCA للاستشارات الإدارية</h4>
+                            <p class="job-role" data-ar="مستشار التميز المؤسسي" data-en="Organizational Excellence Consultant">مستشار التميز المؤسسي</p>
                             <p class="job-date">2016 - 2017</p>
-                            <p class="job-description">
-                                تقديم استشارات متخصصة في مجالات التميز المؤسسي وإدارة الجودة للجهات الحكومية والخاصة.
-                            </p>
+                            <p class="job-description" data-ar="تقديم استشارات متخصصة في مجالات التميز المؤسسي وإدارة الجودة للجهات الحكومية والخاصة، مع التركيز على تطبيق نماذج التميز العالمية والمحلية." data-en="Providing specialized consultancy in organizational excellence and quality management for government and private entities, focusing on implementing global and local excellence models.">تقديم استشارات متخصصة في مجالات التميز المؤسسي وإدارة الجودة للجهات الحكومية والخاصة، مع التركيز على تطبيق نماذج التميز العالمية والمحلية.</p>
                         </div>
                         <div class="previous-job-card">
-                            <h4>أساتذة التميز المؤسسي الدولي</h4>
-                            <p class="job-role">مستشار التميز</p>
+                            <div class="job-number">02</div>
+                            <h4 data-ar="أساتذة التميز المؤسسي الدولي" data-en="International Organizational Excellence Professors">أساتذة التميز المؤسسي الدولي</h4>
+                            <p class="job-role" data-ar="مستشار التميز" data-en="Excellence Consultant">مستشار التميز</p>
                             <p class="job-date">2015 - 2016</p>
-                            <p class="job-description">
-                                العمل كمستشار تميز مؤسسي مع التركيز على تطوير أنظمة إدارة الأداء.
-                            </p>
+                            <p class="job-description" data-ar="العمل كمستشار تميز مؤسسي، مع التركيز على تطوير أنظمة إدارة الأداء وتطبيق معايير التميز في مختلف القطاعات." data-en="Working as an organizational excellence consultant, focusing on developing performance management systems and implementing excellence standards across various sectors.">العمل كمستشار تميز مؤسسي، مع التركيز على تطوير أنظمة إدارة الأداء وتطبيق معايير التميز في مختلف القطاعات.</p>
+                        </div>
+                        <div class="previous-job-card">
+                            <div class="job-number">03</div>
+                            <h4 data-ar="منسق مشاريع" data-en="Project Coordinator">منسق مشاريع</h4>
+                            <p class="job-date">2014 - 2015</p>
+                            <p class="job-description" data-ar="تنسيق وإدارة المشاريع الاستشارية، مع المساهمة في تطوير المنهجيات وأدوات العمل الاستشارية." data-en="Coordinating and managing consulting projects, while contributing to the development of methodologies and consulting work tools.">تنسيق وإدارة المشاريع الاستشارية، مع المساهمة في تطوير المنهجيات وأدوات العمل الاستشارية.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Certifications Column -->
                 <div class="certifications-column">
-                    <h3>الشهادات المهنية</h3>
+                    <h2 class="section-title" data-ar="الدورات التدريبية والشهادات المهنية" data-en="Training Courses & Professional Certifications">الدورات التدريبية والشهادات المهنية</h2>
                     <div class="cert-categories">
                         <div class="cert-category">
-                            <h4><i class="fas fa-lightbulb"></i> الإبداع والابتكار</h4>
+                            <h4 data-ar="الإبداع والابتكار" data-en="Creativity & Innovation"><i class="fas fa-lightbulb"></i> الإبداع والابتكار</h4>
                             <ul>
-                                <li>التفكير التصميمي (Design Thinking)</li>
-                                <li>إدارة الابتكار والتحول الرقمي</li>
-                                <li>تصميم تجربة المستخدم (UX Design)</li>
+                                <li data-ar="التفكير التصميمي (Design Thinking) - مستوى متقدم" data-en="Design Thinking - Advanced Level">التفكير التصميمي (Design Thinking) - مستوى متقدم</li>
+                                <li data-ar="إدارة الابتكار والتحول الرقمي" data-en="Innovation Management & Digital Transformation">إدارة الابتكار والتحول الرقمي</li>
+                                <li data-ar="منهجيات الابتكار المؤسسي وإدارة الأفكار" data-en="Organizational Innovation Methodologies & Idea Management">منهجيات الابتكار المؤسسي وإدارة الأفكار</li>
+                                <li data-ar="تصميم تجربة المستخدم (UX Design)" data-en="User Experience Design (UX Design)">تصميم تجربة المستخدم (UX Design)</li>
+                                <li data-ar="الابتكار المفتوح والشراكات الاستراتيجية" data-en="Open Innovation & Strategic Partnerships">الابتكار المفتوح والشراكات الاستراتيجية</li>
                             </ul>
                         </div>
                         <div class="cert-category">
-                            <h4><i class="fas fa-project-diagram"></i> إدارة المشاريع</h4>
+                            <h4 data-ar="إدارة المخاطر والمشاريع" data-en="Risk & Project Management"><i class="fas fa-exclamation-triangle"></i> إدارة المخاطر والمشاريع</h4>
                             <ul>
-                                <li>PMP - Project Management Professional</li>
+                                <li data-ar="إدارة المخاطر المؤسسية (Enterprise Risk Management - ERM)" data-en="Enterprise Risk Management (ERM)">إدارة المخاطر المؤسسية (Enterprise Risk Management - ERM)</li>
+                                <li data-ar="PMP - Project Management Professional (التحضير للشهادة)" data-en="PMP - Project Management Professional (Preparation)">PMP - Project Management Professional (التحضير للشهادة)</li>
                                 <li>PRINCE2 Foundation & Practitioner</li>
+                                <li data-ar="إدارة المحافظ والبرامج (Portfolio & Program Management)" data-en="Portfolio & Program Management">إدارة المحافظ والبرامج (Portfolio & Program Management)</li>
+                                <li data-ar="منهجيات إدارة المشاريع الحديثة" data-en="Modern Project Management Methodologies">منهجيات إدارة المشاريع الحديثة</li>
+                            </ul>
+                        </div>
+                        <div class="cert-category">
+                            <h4 data-ar="إدارة المشاريع الرشيقة وسكرم" data-en="Agile Project Management & Scrum"><i class="fas fa-users-cog"></i> إدارة المشاريع الرشيقة وسكرم</h4>
+                            <ul>
                                 <li>Certified Scrum Master (CSM)</li>
+                                <li data-ar="Agile Project Management - مستوى متقدم" data-en="Agile Project Management - Advanced Level">Agile Project Management - مستوى متقدم</li>
+                                <li>Lean Six Sigma Green Belt</li>
+                                <li>Kanban System Design</li>
+                                <li>SAFe (Scaled Agile Framework) Fundamentals</li>
+                            </ul>
+                        </div>
+                        <div class="cert-category">
+                            <h4 data-ar="الاستراتيجية والأداء" data-en="Strategy & Performance"><i class="fas fa-chess"></i> الاستراتيجية والأداء</h4>
+                            <ul>
+                                <li data-ar="بطاقة الأداء المتوازن (Balanced Scorecard - BSC)" data-en="Balanced Scorecard (BSC)">بطاقة الأداء المتوازن (Balanced Scorecard - BSC)</li>
+                                <li data-ar="التخطيط الاستراتيجي المتقدم والتفكير الاستراتيجي" data-en="Advanced Strategic Planning & Strategic Thinking">التخطيط الاستراتيجي المتقدم والتفكير الاستراتيجي</li>
+                                <li data-ar="إدارة الأداء المؤسسي وتصميم مؤشرات الأداء" data-en="Organizational Performance Management & KPI Design">إدارة الأداء المؤسسي وتصميم مؤشرات الأداء</li>
+                                <li data-ar="تطوير ومراجعة الاستراتيجيات المؤسسية" data-en="Developing & Reviewing Organizational Strategies">تطوير ومراجعة الاستراتيجيات المؤسسية</li>
+                                <li data-ar="نماذج التميز المؤسسي (EFQM, Baldrige, GEM)" data-en="Organizational Excellence Models (EFQM, Baldrige, GEM)">نماذج التميز المؤسسي (EFQM, Baldrige, GEM)</li>
+                            </ul>
+                        </div>
+                        <div class="cert-category">
+                            <h4 data-ar="تجربة العميل وإدارة الجودة" data-en="Customer Experience & Quality Management"><i class="fas fa-users"></i> تجربة العميل وإدارة الجودة</h4>
+                            <ul>
+                                <li data-ar="إدارة تجربة العميل (Customer Experience Management)" data-en="Customer Experience Management (CEM)">إدارة تجربة العميل (Customer Experience Management)</li>
+                                <li data-ar="نظام التصنيف العالمي بالنجوم - خبير معتمد" data-en="Global Star Rating System - Certified Expert">نظام التصنيف العالمي بالنجوم - خبير معتمد</li>
+                                <li data-ar="ISO 9001:2015 - نظام إدارة الجودة" data-en="ISO 9001:2015 - Quality Management System">ISO 9001:2015 - نظام إدارة الجودة</li>
+                                <li data-ar="ISO 10002 - إدارة شكاوى العملاء" data-en="ISO 10002 - Customer Complaint Management">ISO 10002 - إدارة شكاوى العملاء</li>
+                                <li data-ar="قياس رضا العملاء وتحليل البيانات" data-en="Customer Satisfaction Measurement & Data Analysis">قياس رضا العملاء وتحليل البيانات</li>
+                            </ul>
+                        </div>
+                        <div class="cert-category">
+                            <h4 data-ar="القيادة والتطوير المهني" data-en="Leadership & Professional Development"><i class="fas fa-graduation-cap"></i> القيادة والتطوير المهني</h4>
+                            <ul>
+                                <li data-ar="القيادة التحويلية والإدارية" data-en="Transformational & Managerial Leadership">القيادة التحويلية والإدارية</li>
+                                <li data-ar="إدارة التغيير المؤسسي" data-en="Organizational Change Management">إدارة التغيير المؤسسي</li>
+                                <li data-ar="بناء وقيادة الفرق عالية الأداء" data-en="Building & Leading High-Performance Teams">بناء وقيادة الفرق عالية الأداء</li>
+                                <li data-ar="التدريب والتطوير المهني (Train the Trainer)" data-en="Train the Trainer">التدريب والتطوير المهني (Train the Trainer)</li>
+                                <li data-ar="التواصل الفعال ومهارات العرض والتقديم" data-en="Effective Communication & Presentation Skills">التواصل الفعال ومهارات العرض والتقديم</li>
                             </ul>
                         </div>
                     </div>
@@ -1875,406 +617,294 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Page 12: Skills & Competencies -->
     <section id="skills" class="skills-section">
         <div class="container">
-            <h2 class="section-title">المهارات الأساسية والكفاءات المتخصصة</h2>
-            <p class="section-intro">
-                مجموعة متنوعة وشاملة من المهارات التقنية والإدارية والقيادية المكتسبة عبر أكثر من 12 عاماً من الخبرة العملية.
-            </p>
+            <h2 class="section-title" data-ar="المهارات الأساسية والكفاءات المتخصصة" data-en="Core Skills & Specialized Competencies">المهارات الأساسية والكفاءات المتخصصة</h2>
+            <p class="section-intro" data-ar="مجموعة متنوعة وشاملة من المهارات التقنية والإدارية والقيادية المكتسبة عبر أكثر من 12 عاماً من الخبرة العملية المكثفة مع أبرز المؤسسات الحكومية الرائدة في منطقة الخليج العربي." data-en="A diverse and comprehensive set of technical, management, and leadership skills acquired over more than 12 years of intensive practical experience with the leading government institutions in the Arabian Gulf region.">مجموعة متنوعة وشاملة من المهارات التقنية والإدارية والقيادية المكتسبة عبر أكثر من 12 عاماً من الخبرة العملية المكثفة مع أبرز المؤسسات الحكومية الرائدة في منطقة الخليج العربي.</p>
 
             <div class="skills-grid">
                 <div class="skill-category-card">
                     <div class="skill-icon"><i class="fas fa-tools"></i></div>
-                    <h3>إدارة المشاريع وتحسين الخدمات</h3>
+                    <h3 data-ar="إدارة المشاريع وتحسين الخدمات" data-en="Project Management & Service Improvement">إدارة المشاريع وتحسين الخدمات</h3>
                     <ul>
-                        <li>إدارة المشاريع الاستشارية الكبرى والمعقدة</li>
-                        <li>إعادة هندسة العمليات والخدمات الحكومية (BPR)</li>
-                        <li>رسم وتحليل رحلة العميل</li>
-                        <li>تصميم الخدمات (Service Design)</li>
+                        <li data-ar="إدارة المشاريع الاستشارية الكبرى والمعقدة" data-en="Managing Large & Complex Consulting Projects">إدارة المشاريع الاستشارية الكبرى والمعقدة</li>
+                        <li data-ar="إعادة هندسة العمليات والخدمات الحكومية (BPR)" data-en="Business Process Reengineering (BPR)">إعادة هندسة العمليات والخدمات الحكومية (BPR)</li>
+                        <li data-ar="رسم وتحليل رحلة العميل (Customer Journey Mapping)" data-en="Customer Journey Mapping">رسم وتحليل رحلة العميل (Customer Journey Mapping)</li>
+                        <li data-ar="تحليل وتحسين تجربة المستخدم (UX Analysis)" data-en="User Experience (UX) Analysis">تحليل وتحسين تجربة المستخدم (UX Analysis)</li>
+                        <li data-ar="تصميم الخدمات (Service Design)" data-en="Service Design">تصميم الخدمات (Service Design)</li>
+                        <li data-ar="إدارة التغيير المؤسسي (Change Management)" data-en="Change Management">إدارة التغيير المؤسسي (Change Management)</li>
+                        <li data-ar="قياس وتحسين مستويات الخدمة (SLA)" data-en="Service Level Agreement (SLA) Management">قياس وتحسين مستويات الخدمة (SLA)</li>
                     </ul>
                 </div>
 
                 <div class="skill-category-card">
                     <div class="skill-icon"><i class="fas fa-bullseye"></i></div>
-                    <h3>الاستراتيجية ومؤشرات الأداء</h3>
+                    <h3 data-ar="الاستراتيجية ومؤشرات الأداء" data-en="Strategy & Performance Indicators">الاستراتيجية ومؤشرات الأداء</h3>
                     <ul>
-                        <li>تطوير الاستراتيجيات المؤسسية والقطاعية</li>
-                        <li>بطاقة الأداء المتوازن (Balanced Scorecard)</li>
-                        <li>تصميم وتطوير مؤشرات الأداء الرئيسية (KPIs)</li>
-                        <li>التخطيط الاستراتيجي والتشغيلي</li>
+                        <li data-ar="تطوير الاستراتيجيات المؤسسية والقطاعية" data-en="Developing Organizational & Sectoral Strategies">تطوير الاستراتيجيات المؤسسية والقطاعية</li>
+                        <li data-ar="بطاقة الأداء المتوازن (Balanced Scorecard)" data-en="Balanced Scorecard">بطاقة الأداء المتوازن (Balanced Scorecard)</li>
+                        <li data-ar="تصميم وتطوير مؤشرات الأداء الرئيسية (KPIs)" data-en="KPIs Design & Development">تصميم وتطوير مؤشرات الأداء الرئيسية (KPIs)</li>
+                        <li data-ar="إدارة الأداء المؤسسي والفردي" data-en="Organizational & Individual Performance Management">إدارة الأداء المؤسسي والفردي</li>
+                        <li data-ar="التخطيط الاستراتيجي والتشغيلي" data-en="Strategic & Operational Planning">التخطيط الاستراتيجي والتشغيلي</li>
+                        <li data-ar="تحليل الفجوات الاستراتيجية (Gap Analysis)" data-en="Strategic Gap Analysis">تحليل الفجوات الاستراتيجية (Gap Analysis)</li>
+                        <li data-ar="قياس الأثر والنتائج (Impact Measurement)" data-en="Impact Measurement">قياس الأثر والنتائج (Impact Measurement)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-icon"><i class="fas fa-smile"></i></div>
+                    <h3 data-ar="تجربة العميل والبحوث" data-en="Customer Experience & Research">تجربة العميل والبحوث</h3>
+                    <ul>
+                        <li data-ar="تصميم وتنفيذ استطلاعات رضا العملاء" data-en="Designing & Implementing Customer Satisfaction Surveys">تصميم وتنفيذ استطلاعات رضا العملاء</li>
+                        <li data-ar="تحليل البيانات والإحصائيات المتقدمة" data-en="Advanced Data & Statistics Analysis">تحليل البيانات والإحصائيات المتقدمة</li>
+                        <li data-ar="قياس مؤشر صافي الترويج (Net Promoter Score - NPS)" data-en="Net Promoter Score (NPS) Measurement">قياس مؤشر صافي الترويج (Net Promoter Score - NPS)</li>
+                        <li data-ar="قياس رضا العملاء (CSAT) وجهد العميل (CES)" data-en="CSAT & Customer Effort Score (CES) Measurement">قياس رضا العملاء (CSAT) وجهد العميل (CES)</li>
+                        <li data-ar="تحليل سلوك العملاء وأنماطهم" data-en="Customer Behavior & Pattern Analysis">تحليل سلوك العملاء وأنماطهم</li>
+                        <li data-ar="إدارة برامج صوت العميل (Voice of Customer)" data-en="Voice of Customer (VoC) Program Management">إدارة برامج صوت العميل (Voice of Customer)</li>
+                        <li data-ar="تطوير شخصيات العملاء (Customer Personas)" data-en="Customer Personas Development">تطوير شخصيات العملاء (Customer Personas)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 data-ar="إدارة المخاطر والتحسين المستمر" data-en="Risk Management & Continuous Improvement">إدارة المخاطر والتحسين المستمر</h3>
+                    <ul>
+                        <li data-ar="تحديد وتقييم وإدارة المخاطر المؤسسية" data-en="Organizational Risk Identification, Assessment & Management">تحديد وتقييم وإدارة المخاطر المؤسسية</li>
+                        <li data-ar="منهجيات التحسين المستمر (Kaizen, PDCA)" data-en="Continuous Improvement Methodologies (Kaizen, PDCA)">منهجيات التحسين المستمر (Kaizen, PDCA)</li>
+                        <li>Six Sigma & Lean Management</li>
+                        <li data-ar="إدارة التغيير المؤسسي والثقافة التنظيمية" data-en="Organizational Change & Culture Management">إدارة التغيير المؤسسي والثقافة التنظيمية</li>
+                        <li data-ar="إدارة الأزمات والاستمرارية" data-en="Crisis & Business Continuity Management">إدارة الأزمات والاستمرارية</li>
+                        <li data-ar="تحليل الأسباب الجذرية (Root Cause Analysis)" data-en="Root Cause Analysis">تحليل الأسباب الجذرية (Root Cause Analysis)</li>
+                        <li data-ar="تطوير خطط التحسين والمعالجة" data-en="Developing Improvement & Remediation Plans">تطوير خطط التحسين والمعالجة</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3 data-ar="التدريب والتطوير المؤسسي" data-en="Training & Organizational Development">التدريب والتطوير المؤسسي</h3>
+                    <ul>
+                        <li data-ar="تصميم وتطوير البرامج التدريبية المتخصصة" data-en="Designing & Developing Specialized Training Programs">تصميم وتطوير البرامج التدريبية المتخصصة</li>
+                        <li data-ar="تقديم ورش العمل والدورات التدريبية" data-en="Delivering Workshops & Training Courses">تقديم ورش العمل والدورات التدريبية</li>
+                        <li data-ar="بناء القدرات المؤسسية والفردية" data-en="Building Organizational & Individual Capabilities">بناء القدرات المؤسسية والفردية</li>
+                        <li data-ar="التدريب على معايير التميز والجودة" data-en="Training on Excellence & Quality Standards">التدريب على معايير التميز والجودة</li>
+                        <li data-ar="تطوير المدربين (Train the Trainer)" data-en="Train the Trainer">تطوير المدربين (Train the Trainer)</li>
+                        <li data-ar="التوجيه والإرشاد المهني (Coaching & Mentoring)" data-en="Coaching & Mentoring">التوجيه والإرشاد المهني (Coaching & Mentoring)</li>
+                        <li data-ar="تقييم فعالية التدريب وقياس الأثر" data-en="Training Effectiveness Evaluation & Impact Measurement">تقييم فعالية التدريب وقياس الأثر</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3 data-ar="التقنية والأدوات" data-en="Technology & Tools">التقنية والأدوات</h3>
+                    <ul>
+                        <li data-ar="Microsoft Office Suite (Word, Excel, PowerPoint, Visio) - مستوى متقدم" data-en="Microsoft Office Suite (Word, Excel, PowerPoint, Visio) - Advanced Level">Microsoft Office Suite (Word, Excel, PowerPoint, Visio) - مستوى متقدم</li>
+                        <li data-ar="أدوات إدارة المشاريع (MS Project, Primavera, Trello, Asana)" data-en="Project Management Tools (MS Project, Primavera, Trello, Asana)">أدوات إدارة المشاريع (MS Project, Primavera, Trello, Asana)</li>
+                        <li data-ar="أدوات التحليل والتصور (Power BI, Tableau, Excel Advanced)" data-en="Analysis & Visualization Tools (Power BI, Tableau, Excel Advanced)">أدوات التحليل والتصور (Power BI, Tableau, Excel Advanced)</li>
+                        <li data-ar="أدوات التصميم والعرض (Adobe Creative Suite, Canva)" data-en="Design & Presentation Tools (Adobe Creative Suite, Canva)">أدوات التصميم والعرض (Adobe Creative Suite, Canva)</li>
+                        <li data-ar="أنظمة إدارة المستندات والجودة" data-en="Document & Quality Management Systems">أنظمة إدارة المستندات والجودة</li>
+                        <li data-ar="أدوات الاستطلاعات وجمع البيانات (SurveyMonkey, Google Forms)" data-en="Survey & Data Collection Tools (SurveyMonkey, Google Forms)">أدوات الاستطلاعات وجمع البيانات (SurveyMonkey, Google Forms)</li>
+                        <li data-ar="منصات التعاون والعمل عن بعد (Teams, Zoom, Slack)" data-en="Collaboration & Remote Work Platforms (Teams, Zoom, Slack)">منصات التعاون والعمل عن بعد (Teams, Zoom, Slack)</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Deliverables Section -->
-    <section id="deliverables" class="deliverables-section">
-        <div class="container">
-            <h2 class="section-title">المخرجات المشتركة في المشاريع الاستشارية</h2>
-            <p class="deliverables-intro">
-                مجموعة شاملة من المخرجات والوثائق المؤسسية التي يتم تطويرها خلال المشاريع الاستشارية لضمان الاستدامة ونقل المعرفة:
-            </p>
-            
-            <div class="deliverables-grid">
-                <div class="deliverable-item">
-                    <i class="fas fa-check"></i>
-                    <span>تحليل الفجوات والتقييم التشخيصي الشامل</span>
-                </div>
-                <div class="deliverable-item">
-                    <i class="fas fa-check"></i>
-                    <span>رسم وتحليل وتحسين رحلة العميل</span>
-                </div>
-                <div class="deliverable-item">
-                    <i class="fas fa-check"></i>
-                    <span>استراتيجية تطوير وتحسين الخدمات</span>
-                </div>
-                <div class="deliverable-item">
-                    <i class="fas fa-check"></i>
-                    <span>تطوير وتفعيل ميثاق المتعاملين</span>
+            <div id="deliverables" class="deliverables-section">
+                <h3 data-ar="المخرجات المشتركة في المشاريع الاستشارية" data-en="Common Deliverables in Consulting Projects"><i class="fas fa-clipboard-check"></i> <span data-ar="المخرجات المشتركة في المشاريع الاستشارية" data-en="Common Deliverables in Consulting Projects">المخرجات المشتركة في المشاريع الاستشارية</span></h3>
+                <p class="deliverables-intro" data-ar="مجموعة شاملة من المخرجات والوثائق المؤسسية التي يتم تطويرها خلال المشاريع الاستشارية لضمان الاستدامة ونقل المعرفة:" data-en="Comprehensive set of outputs and institutional documents developed during consulting projects to ensure sustainability and knowledge transfer:">مجموعة شاملة من المخرجات والوثائق المؤسسية التي يتم تطويرها خلال المشاريع الاستشارية لضمان الاستدامة ونقل المعرفة:</p>
+                <div class="deliverables-grid">
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="تحليل الفجوات والتقييم التشخيصي الشامل" data-en="Gap Analysis & Comprehensive Diagnostic Assessment">تحليل الفجوات والتقييم التشخيصي الشامل</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="رسم وتحليل وتحسين رحلة العميل" data-en="Customer Journey Mapping, Analysis & Improvement">رسم وتحليل وتحسين رحلة العميل</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="استراتيجية تطوير وتحسين الخدمات" data-en="Service Development & Improvement Strategy">استراتيجية تطوير وتحسين الخدمات</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="تطوير وتفعيل ميثاق المتعاملين" data-en="Customer Charter Development & Activation">تطوير وتفعيل ميثاق المتعاملين</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="منهجية إشراك أصحاب المصلحة والشركاء" data-en="Stakeholder & Partner Engagement Methodology">منهجية إشراك أصحاب المصلحة والشركاء</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="برامج المكافآت والتقدير والتوجيه" data-en="Rewards, Recognition & Guidance Programs">برامج المكافآت والتقدير والتوجيه</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="تقسيم العملاء واتفاقيات مستوى الخدمة (SLA)" data-en="Customer Segmentation & Service Level Agreements (SLA)">تقسيم العملاء واتفاقيات مستوى الخدمة (SLA)</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="مبادرات وخطط تحسين الخدمات" data-en="Service Improvement Initiatives & Plans">مبادرات وخطط تحسين الخدمات</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="خطة التشغيل ومؤشرات الأداء الرئيسية" data-en="Operations Plan & Key Performance Indicators">خطة التشغيل ومؤشرات الأداء الرئيسية</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="تقييم وتصنيف الخدمات حسب المعايير" data-en="Service Evaluation & Classification by Standards">تقييم وتصنيف الخدمات حسب المعايير</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="دليل معايير خدمة العملاء والسياسات" data-en="Customer Service Standards & Policies Manual">دليل معايير خدمة العملاء والسياسات</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="برامج التدريب والتطوير المتخصصة" data-en="Specialized Training & Development Programs">برامج التدريب والتطوير المتخصصة</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="أدلة الإجراءات والعمليات التشغيلية" data-en="Procedures & Operational Processes Manuals">أدلة الإجراءات والعمليات التشغيلية</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="أنظمة القياس والمتابعة والتقارير" data-en="Measurement, Follow-up & Reporting Systems">أنظمة القياس والمتابعة والتقارير</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="خطط الاستدامة والتحسين المستمر" data-en="Sustainability & Continuous Improvement Plans">خطط الاستدامة والتحسين المستمر</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Awards Section -->
+    <!-- Page 13: Awards & Recognition -->
     <section id="awards" class="awards-section">
         <div class="container">
-            <h2 class="section-title">الجوائز والتقديرات المهنية</h2>
-            
+            <h2 class="section-title" data-ar="الجوائز والتقديرات المهنية" data-en="Awards & Professional Recognition">الجوائز والتقديرات المهنية</h2>
             <div class="awards-grid">
-                <div class="award-card">
+                <div class="award-card featured">
+                    <div class="award-badge">01</div>
                     <div class="award-icon"><i class="fas fa-trophy"></i></div>
-                    <h3>شهادة تقدير من وزير الداخلية</h3>
-                    <p class="award-entity">شرطة عجمان</p>
+                    <h3 data-ar="شهادة تقدير من وزير الداخلية" data-en="Certificate of Appreciation from Minister of Interior">شهادة تقدير من وزير الداخلية</h3>
+                    <p class="award-entity" data-ar="شرطة عجمان" data-en="Ajman Police">شرطة عجمان</p>
                     <p class="award-year">2025</p>
-                    <p class="award-description">
-                        تقديراً للجهود المتميزة في تطبيق برنامج 7 نجوم وتحقيق نتائج استثنائية في تحسين الخدمات.
-                    </p>
+                    <p class="award-description" data-ar="تقديراً للجهود المتميزة في تطبيق برنامج 7 نجوم وتحقيق نتائج استثنائية في تحسين الخدمات." data-en="In recognition of distinguished efforts in implementing 7 Stars program and achieving exceptional results in service improvement.">تقديراً للجهود المتميزة في تطبيق برنامج 7 نجوم وتحقيق نتائج استثنائية في تحسين الخدمات.</p>
                 </div>
 
                 <div class="award-card">
+                    <div class="award-badge">02</div>
                     <div class="award-icon"><i class="fas fa-award"></i></div>
-                    <h3>جوائز داخلية من إيثوس</h3>
+                    <h3 data-ar="جوائز داخلية من إيثوس" data-en="Internal Awards from Ethos">جوائز داخلية من إيثوس</h3>
                     <ul class="awards-list">
-                        <li>جائزة البطل المجهول</li>
-                        <li>أفضل موظف</li>
-                        <li>موظف العام 2020</li>
+                        <li data-ar="جائزة البطل المجهول" data-en="Unsung Hero Award">جائزة البطل المجهول</li>
+                        <li data-ar="أفضل موظف" data-en="Best Employee">أفضل موظف</li>
+                        <li data-ar="موظف العام 2020" data-en="Employee of the Year 2020">موظف العام 2020</li>
                     </ul>
+                    <p class="award-description" data-ar="تقديراً للأداء المتميز والتفاني في العمل والمساهمة الفعالة في نجاح المشاريع." data-en="In recognition of outstanding performance, dedication to work, and effective contribution to project success.">تقديراً للأداء المتميز والتفاني في العمل والمساهمة الفعالة في نجاح المشاريع.</p>
                 </div>
+
+                <div class="award-card">
+                    <div class="award-badge">03</div>
+                    <div class="award-icon"><i class="fas fa-certificate"></i></div>
+                    <h3 data-ar="شهادات تقدير من جهات حكومية" data-en="Certificates of Appreciation from Government Entities">شهادات تقدير من جهات حكومية</h3>
+                    <ul class="awards-list">
+                        <li data-ar="بلدية دبي" data-en="Dubai Municipality">بلدية دبي</li>
+                        <li data-ar="هيئة الصحة بدبي" data-en="Dubai Health Authority">هيئة الصحة بدبي</li>
+                        <li data-ar="وزارة الداخلية" data-en="Ministry of Interior">وزارة الداخلية</li>
+                        <li data-ar="جهات حكومية أخرى" data-en="Other Government Entities">جهات حكومية أخرى</li>
+                    </ul>
+                    <p class="award-description" data-ar="شهادات تقدير متعددة من الجهات الحكومية التي تم العمل معها نظير التميز في تقديم الخدمات الاستشارية." data-en="Multiple certificates of appreciation from government entities for excellence in providing consulting services.">شهادات تقدير متعددة من الجهات الحكومية التي تم العمل معها نظير التميز في تقديم الخدمات الاستشارية.</p>
+                </div>
+            </div>
+
+            <div class="closing-statement">
+                <h3 data-ar="الالتزام بالتميز والتطوير المستمر" data-en="Commitment to Excellence and Continuous Development">الالتزام بالتميز والتطوير المستمر</h3>
+                <p data-ar="تعكس هذه الجوائز والتقديرات التزاماً راسخاً بتحقيق أعلى معايير التميز المهني والمساهمة الفعالة في تطوير الخدمات الحكومية. وتمثل دافعاً مستمراً للمزيد من الإنجازات والمساهمات في رفع مستوى الأداء المؤسسي." data-en="These awards reflect firm commitment to achieving highest professional excellence standards and effective contribution to developing government services.">تعكس هذه الجوائز والتقديرات التزاماً راسخاً بتحقيق أعلى معايير التميز المهني والمساهمة الفعالة في تطوير الخدمات الحكومية. وتمثل دافعاً مستمراً للمزيد من الإنجازات والمساهمات في رفع مستوى الأداء المؤسسي.</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section (Hidden for Print) -->
-    <section id="contact" class="contact-section no-print">
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title">تواصل معي</h2>
-            <p class="section-intro">
-                أنا جاهز للتعاون وتبادل الأفكار. لا تتردد في التواصل عبر أي من الوسائل التالية:
-            </p>
+            <h2 class="section-title" data-ar="تواصل معي" data-en="Contact Me">تواصل معي</h2>
+            <p class="section-intro" data-ar="أنا جاهز للتعاون وتبادل الأفكار. لا تتردد في التواصل عبر أي من الوسائل التالية:" data-en="I'm ready to collaborate and exchange ideas. Feel free to contact me through any of the following means:">أنا جاهز للتعاون وتبادل الأفكار. لا تتردد في التواصل عبر أي من الوسائل التالية:</p>
             
             <div class="contact-grid">
                 <a href="tel:0567889975" class="contact-card">
                     <i class="fas fa-phone"></i>
-                    <h4>الهاتف</h4>
+                    <h4 data-ar="الهاتف" data-en="Phone">الهاتف</h4>
                     <p>0567889975</p>
                 </a>
                 
-                <a href="https://wa.me/971567889975" class="contact-card whatsapp">
+                <a href="https://wa.me/971567889975" class="contact-card whatsapp" target="_blank">
                     <i class="fab fa-whatsapp"></i>
-                    <h4>واتساب</h4>
+                    <h4 data-ar="واتساب" data-en="WhatsApp">واتساب</h4>
                     <p>0567889975</p>
                 </a>
                 
                 <a href="mailto:Moein-najem@hotmail.com" class="contact-card email">
                     <i class="fas fa-envelope"></i>
-                    <h4>البريد الإلكتروني</h4>
+                    <h4 data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</h4>
                     <p>Moein-najem@hotmail.com</p>
                 </a>
+                
+                <a href="https://linkedin.com/in/moein-najem" class="contact-card linkedin" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                    <h4 data-ar="لينكد إن" data-en="LinkedIn">لينكد إن</h4>
+                    <p>Moein Najem</p>
+                </a>
+                
+                <a href="https://instagram.com/moein.najem" class="contact-card instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <h4 data-ar="إنستغرام" data-en="Instagram">إنستغرام</h4>
+                    <p>@moein.najem</p>
+                </a>
+                
+                <div class="contact-card location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4 data-ar="الموقع" data-en="Location">الموقع</h4>
+                    <p data-ar="دبي، الإمارات العربية المتحدة" data-en="Dubai, United Arab Emirates">دبي، الإمارات العربية المتحدة</p>
+                </div>
+                
+                <div class="contact-card golden-visa">
+                    <i class="fas fa-id-card"></i>
+                    <h4 data-ar="الإقامة الذهبية" data-en="Golden Visa">الإقامة الذهبية</h4>
+                    <p data-ar="سارية المفعول" data-en="Valid">سارية المفعول</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer (Hidden for Print) -->
-    <footer class="footer no-print">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <p>© 2025 معين نجم - جميع الحقوق محفوظة</p>
-                </div>
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <!-- Main Footer Info -->
+            <div class="footer-main">
+                <p data-ar="© 2025 معين نجم - جميع الحقوق محفوظة" data-en="© 2025 Moein Najem - All Rights Reserved">&copy; 2025 معين نجم - جميع الحقوق محفوظة</p>
                 
-                <div class="footer-links">
-                    <a href="#home" class="footer-link">
-                        <i class="fas fa-home"></i>
-                        <span>الرئيسية</span>
-                    </a>
-                    <a href="#contact" class="footer-link">
-                        <i class="fas fa-envelope"></i>
-                        <span>تواصل</span>
-                    </a>
-                    <button class="footer-link" onclick="downloadCV()">
-                        <i class="fas fa-download"></i>
-                        <span>تحميل PDF</span>
-                    </button>
+                <!-- Designer Watermark -->
+                <div class="designer-watermark">
+                    <div class="watermark-content">
+                        <span class="watermark-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z" fill="#f59e0b"/>
+                                <path d="M11 7H13V9H11V7ZM11 11H13V17H11V11Z" fill="#f59e0b"/>
+                            </svg>
+                        </span>
+                        <span data-ar="مصمم بتفانٍ بواسطة" data-en="Designed with passion by">مصمم بتفانٍ بواسطة</span>
+                        <a href="https://www.instagram.com/ahmad_el_mohammad" target="_blank" class="designer-link">
+                            <span class="designer-logo">
+                                <span class="logo-text">AHMAD</span>
+                                <span class="logo-accent">DESIGN</span>
+                            </span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
+            
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <a href="#home" class="footer-link">
+                    <i class="fas fa-home"></i>
+                    <span data-ar="الرئيسية" data-en="Home">الرئيسية</span>
+                </a>
+                <a href="#contact" class="footer-link">
+                    <i class="fas fa-envelope"></i>
+                    <span data-ar="تواصل" data-en="Contact">تواصل</span>
+                </a>
+                <a href="#" onclick="downloadCV()" class="footer-link download-link">
+                    <i class="fas fa-download"></i>
+                    <span data-ar="تحميل السيرة" data-en="Download CV">تحميل السيرة</span>
+                </a>
+                <button class="footer-link lang-switcher" onclick="toggleLanguage()">
+                    <i class="fas fa-language"></i>
+                    <span data-ar="English" data-en="العربية">English</span>
+                </button>
+            </div>
         </div>
-    </footer>
+        
+        <!-- Excellence Badge -->
+        <div class="excellence-badge">
+            <div class="badge-icon">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="20" fill="url(#gradient1)"/>
+                    <path d="M20 10L22.5 16.5L29 17.5L24 22L25.5 29L20 25.5L14.5 29L16 22L11 17.5L17.5 16.5L20 10Z" fill="white"/>
+                    <defs>
+                        <linearGradient id="gradient1" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#f59e0b"/>
+                            <stop offset="1" stop-color="#fbbf24"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <span data-ar="نحو التميز دائماً" data-en="Towards Excellence Always">نحو التميز دائماً</span>
+        </div>
+    </div>
+</footer>
 
-    <!-- Floating Hamburger Button -->
-    <button class="floating-hamburger" id="floating-hamburger" onclick="toggleMobileMenu()">
-        <i class="fas fa-bars"></i>
-    </button>
-
-    <script>
-        // ===== Mobile Menu Functionality =====
-        let mobileMenuOpen = false;
-
-        function toggleMobileMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger-menu');
-            const backdrop = document.querySelector('.mobile-menu-backdrop');
-            const floatingBtn = document.getElementById('floating-hamburger');
-            
-            mobileMenuOpen = !mobileMenuOpen;
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-            backdrop.classList.toggle('active');
-            
-            // Hide floating button when menu is open
-            if (mobileMenuOpen && floatingBtn) {
-                floatingBtn.classList.remove('active');
-            }
-            
-            // Prevent body scroll when menu is open
-            document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
-        }
-
-        function closeMobileMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger-menu');
-            const backdrop = document.querySelector('.mobile-menu-backdrop');
-            
-            mobileMenuOpen = false;
-            navLinks.classList.remove('active');
-            hamburger.classList.remove('active');
-            backdrop.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
-        });
-
-        // Close menu when clicking backdrop
-        document.querySelector('.mobile-menu-backdrop').addEventListener('click', closeMobileMenu);
-
-        // Close menu on window resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 1024 && mobileMenuOpen) {
-                closeMobileMenu();
-            }
-        });
-
-        // ===== Hide/Show Header on Scroll =====
-        let lastScrollY = window.scrollY;
-        const navbar = document.querySelector('.navbar');
-        const floatingBtn = document.getElementById('floating-hamburger');
-
-        window.addEventListener('scroll', () => {
-            const currentScrollY = window.scrollY;
-            const scrollDown = currentScrollY > lastScrollY;
-            const atTop = currentScrollY < 100;
-            
-            if (atTop) {
-                navbar.classList.remove('hidden');
-                navbar.classList.add('visible');
-                if (floatingBtn) floatingBtn.classList.remove('active');
-            } else if (scrollDown && currentScrollY > 100) {
-                // Hide navbar when scrolling down
-                navbar.classList.remove('visible');
-                navbar.classList.add('hidden');
-                
-                // Show floating button on mobile
-                if (window.innerWidth <= 1024 && !mobileMenuOpen) {
-                    if (floatingBtn) floatingBtn.classList.add('active');
-                }
-            } else {
-                // Show navbar when scrolling up
-                navbar.classList.remove('hidden');
-                navbar.classList.add('visible');
-                if (floatingBtn) floatingBtn.classList.remove('active');
-            }
-            
-            // Add shadow when scrolled
-            if (currentScrollY > 10) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-            
-            lastScrollY = currentScrollY;
-        });
-
-        // ===== Smooth Scroll =====
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const target = document.querySelector(targetId);
-                if (target) {
-                    const headerHeight = navbar.offsetHeight;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-                    const offsetPosition = targetPosition - headerHeight - 20;
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (mobileMenuOpen) {
-                        closeMobileMenu();
-                    }
-                }
-            });
-        });
-
-        // ===== Active Navigation Link =====
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        function updateActiveLink() {
-            const scrollPosition = window.scrollY + 100;
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${sectionId}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }
-
-        window.addEventListener('scroll', updateActiveLink);
-
-        // ===== Download CV Function =====
-        function downloadCV() {
-            // Temporarily hide non-print elements
-            const nonPrintElements = document.querySelectorAll('.no-print');
-            nonPrintElements.forEach(el => {
-                el.style.display = 'none';
-            });
-            
-            // Trigger print
-            window.print();
-            
-            // Restore elements after a delay
-            setTimeout(() => {
-                nonPrintElements.forEach(el => {
-                    el.style.display = '';
-                });
-            }, 1000);
-        }
-
-        // ===== Language Toggle =====
-        let currentLang = 'ar';
-
-        function toggleLanguage() {
-            const html = document.documentElement;
-            const langText = document.getElementById('lang-text');
-            
-            if (currentLang === 'ar') {
-                currentLang = 'en';
-                html.setAttribute('lang', 'en');
-                html.setAttribute('dir', 'ltr');
-                langText.textContent = 'AR';
-                
-                // Update all text content (simplified version)
-                document.querySelectorAll('[data-ar]').forEach(el => {
-                    const enText = el.getAttribute('data-en') || el.textContent;
-                    el.setAttribute('data-original-ar', el.textContent);
-                    el.textContent = enText;
-                });
-                
-                // Update nav brand
-                document.querySelector('.nav-brand span').textContent = 'Moein Najem';
-                
-            } else {
-                currentLang = 'ar';
-                html.setAttribute('lang', 'ar');
-                html.setAttribute('dir', 'rtl');
-                langText.textContent = 'EN';
-                
-                // Restore Arabic text
-                document.querySelectorAll('[data-original-ar]').forEach(el => {
-                    const originalAr = el.getAttribute('data-original-ar');
-                    el.textContent = originalAr;
-                    el.removeAttribute('data-original-ar');
-                });
-                
-                // Update nav brand
-                document.querySelector('.nav-brand span').textContent = 'معين نجم';
-            }
-            
-            // Save preference
-            localStorage.setItem('preferredLang', currentLang);
-        }
-
-        // Load saved language preference
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('preferredLang');
-            if (savedLang && savedLang === 'en') {
-                toggleLanguage();
-            }
-            
-            // Initialize floating button visibility
-            if (window.innerWidth <= 1024 && window.scrollY > 100) {
-                const floatingBtn = document.getElementById('floating-hamburger');
-                if (floatingBtn) floatingBtn.classList.add('active');
-            }
-        });
-
-        // ===== iOS Viewport Fix =====
-        function setViewportHeight() {
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        }
-
-        window.addEventListener('resize', setViewportHeight);
-        setViewportHeight();
-
-        // ===== Lazy Loading for Images =====
-        document.addEventListener('DOMContentLoaded', () => {
-            const images = document.querySelectorAll('img[data-src]');
-            
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.add('loaded');
-                        observer.unobserve(img);
-                    }
-                });
-            });
-            
-            images.forEach(img => imageObserver.observe(img));
-        });
-
-        console.log('السيرة الذاتية لمعين نجم - جاهزة للاستخدام ✅');
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
