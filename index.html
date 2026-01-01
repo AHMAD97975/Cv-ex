@@ -1,0 +1,2280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>معين نجم - السيرة الذاتية المهنية</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- iOS Meta Tags -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
+    
+    <style>
+        /* ===== CSS Reset & Variables ===== */
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --dark-color: #1f2937;
+            --light-color: #f8fafc;
+            --white: #ffffff;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 50px -12px rgba(0,0,0,0.25);
+            --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            --safe-area-top: env(safe-area-inset-top, 0px);
+            --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            direction: rtl;
+            overflow-x: hidden;
+            padding-top: var(--safe-area-top);
+            padding-bottom: var(--safe-area-bottom);
+        }
+
+        /* ===== Container ===== */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== Navigation - Fixed Header ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+            z-index: 1000;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+            will-change: transform;
+            padding-top: var(--safe-area-top);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .navbar.hidden {
+            transform: translateY(-100%);
+        }
+
+        .navbar.visible {
+            transform: translateY(0);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            height: 70px;
+        }
+
+        .nav-brand {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-brand i {
+            color: var(--accent-color);
+        }
+
+        /* ===== Desktop Navigation ===== */
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+            background: rgba(30, 58, 138, 0.05);
+        }
+
+        .nav-links a.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 12px;
+            left: 12px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* ===== Mobile Hamburger Menu ===== */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 24px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .hamburger-menu span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .hamburger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* ===== Action Buttons ===== */
+        .nav-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-lang, .btn-download {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-lang:hover, .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-download {
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+        }
+
+        /* ===== Mobile Menu ===== */
+        @media (max-width: 1024px) {
+            .hamburger-menu {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 300px;
+                height: calc(100vh - 70px);
+                background: var(--white);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 40px 30px;
+                box-shadow: var(--shadow-xl);
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 999;
+                overflow-y: auto;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                width: 100%;
+                padding: 15px 20px;
+                margin: 5px 0;
+                font-size: 1.1rem;
+                border-radius: 10px;
+            }
+
+            .mobile-menu-backdrop {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(5px);
+                z-index: 998;
+            }
+
+            .mobile-menu-backdrop.active {
+                display: block;
+            }
+
+            .nav-actions {
+                gap: 10px;
+            }
+
+            .btn-lang, .btn-download {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                width: 100%;
+                right: -100%;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-brand span {
+                display: none;
+            }
+
+            .btn-lang span, .btn-download span {
+                display: none;
+            }
+
+            .btn-lang i, .btn-download i {
+                margin: 0;
+            }
+        }
+
+        /* ===== Hero Section ===== */
+        .hero-section {
+            min-height: 100vh;
+            background: var(--gradient-primary);
+            padding: 120px 0 60px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+            opacity: 0.1;
+        }
+
+        .hero-profile-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            margin: 0 auto;
+            max-width: 800px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .profile-image-container {
+            width: 180px;
+            height: 220px;
+            margin: 0 auto 30px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 4px solid var(--white);
+            box-shadow: var(--shadow-lg);
+            background: var(--white);
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .profile-badge {
+            display: inline-block;
+            background: var(--gradient-accent);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .profile-name {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-title {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .profile-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        /* Personal Information Grid */
+        .personal-info {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .info-item i {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            margin-top: 3px;
+            min-width: 30px;
+        }
+
+        .info-label {
+            display: block;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--white);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-value:hover {
+            color: var(--accent-color);
+        }
+
+        /* ===== Sections Common Styles ===== */
+        section {
+            padding: 80px 0;
+            scroll-margin-top: 80px;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--light-color);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+        }
+
+        .section-intro {
+            text-align: center;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* ===== About Section ===== */
+        .profile-card-section {
+            background: var(--white);
+        }
+
+        .profile-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: var(--shadow-lg);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .profile-description {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .profile-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: var(--light-color);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            transform: translateX(-5px);
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .highlight-item:hover i {
+            color: var(--white);
+        }
+
+        .highlight-item i {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            min-width: 30px;
+        }
+
+        /* ===== Competencies Section ===== */
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .competency-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .competency-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--secondary-color);
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+
+        .competency-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .competency-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ===== Achievements Section ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .awards-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .badge {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ===== Education Section ===== */
+        .education-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            gap: 30px;
+        }
+
+        .education-item {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            border-right: 4px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateX(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .education-badge {
+            display: inline-block;
+            background: var(--gradient-accent);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .education-item h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .institution {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .description {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-top: 15px;
+        }
+
+        /* ===== Experience Sections ===== */
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .experience-header h3 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            flex: 1;
+        }
+
+        .date-badge {
+            background: var(--gradient-accent);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .experience-intro {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--accent-color);
+            opacity: 0.3;
+            margin-bottom: 10px;
+        }
+
+        .project-card h4 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .project-details {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin: 15px 0;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: var(--light-color);
+            color: var(--secondary-color);
+            padding: 6px 15px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Ministry Experience */
+        .role-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .role-badge {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .achievements-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .achievement-box {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .responsibilities-list {
+            display: grid;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .responsibility-item {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .responsibility-item h4 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .number {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        /* Ethos Experience */
+        .ethos-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-box {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .projects-category-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 50px 0 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .major-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .additional-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* ===== Previous Experience ===== */
+        .two-column-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .previous-jobs {
+            display: grid;
+            gap: 20px;
+        }
+
+        .previous-job-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .previous-job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ===== Certifications ===== */
+        .cert-categories {
+            display: grid;
+            gap: 25px;
+        }
+
+        .cert-category {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .cert-category h4 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cert-category i {
+            color: var(--accent-color);
+        }
+
+        .cert-category ul {
+            margin-right: 20px;
+        }
+
+        .cert-category li {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 8px;
+            padding-right: 15px;
+            position: relative;
+        }
+
+        .cert-category li::before {
+            content: '•';
+            position: absolute;
+            right: 0;
+            color: var(--accent-color);
+        }
+
+        /* ===== Skills Section ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .skill-category-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .skill-category-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .skill-category-card li {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 10px;
+            padding-right: 20px;
+            position: relative;
+        }
+
+        .skill-category-card li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        /* Deliverables */
+        .deliverables-section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            margin-top: 60px;
+        }
+
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .deliverable-item {
+            background: var(--light-color);
+            padding: 15px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .deliverable-item:hover {
+            transform: translateX(-5px);
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* ===== Awards Section ===== */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .award-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .award-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .award-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--white);
+            margin: 0 auto 20px;
+        }
+
+        .award-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .closing-statement {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* ===== Contact Section ===== */
+        .contact-section {
+            background: var(--gradient-primary);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,100 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+            opacity: 0.1;
+        }
+
+        .contact-section .section-title {
+            color: var(--white);
+        }
+
+        .contact-section .section-title::after {
+            background: var(--white);
+        }
+
+        .contact-section .section-intro {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .contact-card {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .contact-card i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .contact-card h4 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* Specific colors for contact cards */
+        .whatsapp i { color: #25D366; }
+        .email i { color: #D44638; }
+        .linkedin i { color: #0077B5; }
+        .instagram i { color: #E4405F; }
+        .location i { color: var(--primary-color); }
+        .golden-visa i { color: var(--accent-color); }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 60px 0 30px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .footer-main {
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* ===== Floating Hamburger Button ===== */
+        .floating-hamburger {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+
+        .floating-hamburger.active {
+            display: flex;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        .floating-hamburger:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .floating-hamburger i {
+            font-size: 1.5rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .profile-name {
+                font-size: 2.2rem;
+            }
+
+            .profile-title {
+                font-size: 1.3rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .competencies-grid,
+            .projects-grid,
+            .skills-grid,
+            .awards-grid,
+            .major-projects-grid,
+            .additional-projects-grid,
+            .two-column-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-hamburger {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero-profile-card {
+                padding: 30px 20px;
+            }
+
+            .profile-card {
+                padding: 30px 20px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .profile-name {
+                font-size: 1.8rem;
+            }
+
+            .hero-section {
+                padding: 100px 0 40px;
+            }
+
+            .btn-lang, .btn-download {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-hamburger {
+                bottom: 15px;
+                right: 15px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .navbar .container {
+                padding: 12px 15px;
+            }
+        }
+
+        /* ===== iOS Specific Fixes ===== */
+        @supports (-webkit-touch-callout: none) {
+            .hero-section {
+                min-height: -webkit-fill-available;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .navbar {
+                padding-top: env(safe-area-inset-top);
+                height: calc(70px + env(safe-area-inset-top));
+            }
+            
+            .navbar .container {
+                height: calc(70px + env(safe-area-inset-top));
+            }
+        }
+
+        /* ===== Print Styles ===== */
+        @media print {
+            .navbar,
+            .nav-actions,
+            .contact-section,
+            .footer,
+            .floating-hamburger,
+            .hamburger-menu,
+            .no-print {
+                display: none !important;
+            }
+            
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 12pt !important;
+            }
+            
+            .container {
+                max-width: 100% !important;
+                padding: 0 !important;
+            }
+            
+            section {
+                padding: 20pt 0 !important;
+                page-break-inside: avoid;
+            }
+            
+            .hero-section {
+                background: white !important;
+                color: black !important;
+                padding: 0 !important;
+            }
+            
+            .profile-image {
+                width: 120pt !important;
+                height: 150pt !important;
+            }
+            
+            a {
+                color: black !important;
+                text-decoration: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="nav-brand">
+                <i class="fas fa-user-tie"></i>
+                <span>معين نجم</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="nav-links">
+                <a href="#home" class="active">الرئيسية</a>
+                <a href="#about">نبذة</a>
+                <a href="#education">التعليم</a>
+                <a href="#experience">الخبرات</a>
+                <a href="#certifications">الشهادات</a>
+                <a href="#skills">المهارات</a>
+                <a href="#deliverables">المخرجات</a>
+                <a href="#awards">الجوائز</a>
+            </div>
+            
+            <!-- Mobile Hamburger Menu -->
+            <button class="hamburger-menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Action Buttons -->
+            <div class="nav-actions">
+                <button class="btn-lang" onclick="toggleLanguage()">
+                    <i class="fas fa-language"></i>
+                    <span id="lang-text">EN</span>
+                </button>
+                <button class="btn-download" onclick="downloadCV()">
+                    <i class="fas fa-download"></i>
+                    <span>تحميل PDF</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Backdrop -->
+    <div class="mobile-menu-backdrop" onclick="toggleMobileMenu()"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-profile-card">
+                <div class="profile-image-container">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzFlM2E4YSIvPgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9Ijg1IiByPSI0MCIgZmlsbD0iI2ZmZiIvPgogIDxwYXRoIGQ9Ik02MCAxNjAgYzIwIC0xMCA4MCAtMTAgMTAwIDAgWiIgZmlsbD0iI2ZmZiIvPgo8L3N2Zz4=" 
+                         alt="معين نجم" 
+                         class="profile-image"
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzFlM2E4YSIvPgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9Ijg1IiByPSI0MCIgZmlsbD0iI2ZmZiIvPgogIDxwYXRoIGQ9Ik02MCAxNjAgYzIwIC0xMCA4MCAtMTAgMTAwIDAgWiIgZmlsbD0iI2ZmZiIvPgo8L3N2Zz4='">
+                </div>
+                
+                <div class="profile-badge">خبير معتمد | حكم جائزة SCXA</div>
+                <h1 class="profile-name">معين نجم</h1>
+                <h2 class="profile-title">خبير التميز المؤسسي وتحسين الخدمات</h2>
+                <p class="profile-subtitle">
+                    إدارة المشاريع - التميز - الجودة - إدارة الأداء - مؤشرات الأداء - الاستراتيجية - تحسين الخدمات - تجربة العميل
+                </p>
+                
+                <!-- Personal Information -->
+                <div class="personal-info">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <span class="info-label">الهاتف</span>
+                                <a href="tel:0567889975" class="info-value">0567889975</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span class="info-label">البريد الإلكتروني</span>
+                                <a href="mailto:Moein-najem@hotmail.com" class="info-value">Moein-najem@hotmail.com</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span class="info-label">العنوان</span>
+                                <span class="info-value">دبي، الإمارات العربية المتحدة</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-building"></i>
+                            <div>
+                                <span class="info-label">الشركة الحالية</span>
+                                <a href="http://impactin.ae/" target="_blank" class="info-value">IMPACT IN</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="profile-card-section">
+        <div class="container">
+            <div class="profile-card">
+                <h2 class="section-title">نبذة عن معين نجم</h2>
+                <p class="profile-description">
+                    معين نجم خبير استشاري متميز ومتخصص في مجالات التميز المؤسسي وإدارة المشاريع والجودة، يتمتع بخبرة واسعة تمتد لأكثر من 12 عاماً في العمل مع الجهات الحكومية الرائدة في دولة الإمارات العربية المتحدة والمملكة العربية السعودية. حاصل على العديد من الشهادات المهنية المعتمدة، ومعتمد كحكم لجائزة الشيخ خليفة للتميز الحكومي (SCXA)، وكمقيم رئيسي لبرنامج صفر بيروقراطية الحكومي.
+                </p>
+                <div class="profile-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-star"></i>
+                        <span>خبرة +12 سنة في التميز المؤسسي</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-award"></i>
+                        <span>حكم معتمد في جائزة SCXA</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-building"></i>
+                        <span>خبرة مع جهات حكومية رائدة</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>تطبيق معايير التميز المحلية والعالمية</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Competencies -->
+    <section class="competencies-section">
+        <div class="container">
+            <h2 class="section-title">التخصصات الأساسية والكفاءات المهنية</h2>
+            <p class="section-intro">مجموعة شاملة من الخبرات والمهارات المتخصصة في مجالات التميز المؤسسي وإدارة المشاريع وتحسين الخدمات</p>
+            
+            <div class="competencies-grid">
+                <div class="competency-card">
+                    <div class="card-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>التميز المؤسسي</h3>
+                    <p>تطبيق نماذج التميز العالمية والمحلية وتحقيق الاعتمادات المرموقة</p>
+                </div>
+                <div class="competency-card">
+                    <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>إدارة المشاريع</h3>
+                    <p>خبرة متقدمة في إدارة المشاريع الاستشارية المعقدة من التخطيط حتى التسليم والتقييم</p>
+                </div>
+                <div class="competency-card">
+                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>إدارة الأداء</h3>
+                    <p>تصميم وتطبيق أنظمة إدارة الأداء المؤسسي وبطاقات الأداء المتوازن</p>
+                </div>
+                <div class="competency-card">
+                    <div class="card-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>الجودة</h3>
+                    <p>إدارة أنظمة الجودة وتطبيق معايير ISO والمواصفات الدولية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Stats -->
+    <section class="achievements-section">
+        <div class="container">
+            <h2 class="section-title">الملف الشخصي والإنجازات</h2>
+            <p class="profile-description">
+                معين نجم خبير استشاري متميز ومتخصص في مجالات التميز المؤسسي وإدارة المشاريع والجودة، يتمتع بخبرة واسعة تمتد لأكثر من 12 عاماً في العمل مع الجهات الحكومية الرائدة في دولة الإمارات العربية المتحدة والمملكة العربية السعودية. حاصل على العديد من الشهادات المهنية المعتمدة، ومعتمد كحكم لجائزة الشيخ خليفة للتميز الحكومي (SCXA)، وكمقيم رئيسي لبرنامج صفر بيروقراطية الحكومي.
+            </p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">+10</div>
+                    <p class="stat-label">اعتماد دولي تم تحقيقها للجهات المختلفة</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+50</div>
+                    <p class="stat-label">مشروع منجز مع جهات حكومية رائدة</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+12</div>
+                    <p class="stat-label">سنة خبرة في التميز المؤسسي وإدارة المشاريع</p>
+                </div>
+            </div>
+            
+            <div class="awards-preview">
+                <h3>الاعتمادات والجوائز المحققة للجهات</h3>
+                <div class="awards-badges">
+                    <span class="badge">نظام التصنيف العالمي بالنجوم</span>
+                    <span class="badge">جائزة الشيخ خليفة للتميز الحكومي</span>
+                    <span class="badge">ISO 9001</span>
+                    <span class="badge">ISO 10002</span>
+                    <span class="badge">برنامج 7 نجوم</span>
+                    <span class="badge">صفر بيروقراطية</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2 class="section-title">المؤهلات الأكاديمية والتعليم</h2>
+            <p class="section-intro">مسيرة أكاديمية متدرجة تجمع بين الأسس النظرية والتطبيقات العملية</p>
+            
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-badge">جاري الدراسة</div>
+                    <h3>ماجستير إدارة الأعمال (إدارة المشاريع - طالب حالياً)</h3>
+                    <p class="institution">جامعة ميدوشن | Midocean University</p>
+                    <p class="description">
+                        برنامج ماجستير متخصص يركز على إدارة المشاريع الاستراتيجية والقيادة المؤسسية، يهدف إلى تعزيز المهارات الإدارية المتقدمة والقدرة على قيادة التحولات المؤسسية الكبرى وإدارة المشاريع المعقدة متعددة الأطراف.
+                    </p>
+                </div>
+                <div class="education-item">
+                    <div class="education-badge">مكتمل</div>
+                    <h3>ماجستير مصغر – إدارة الأعمال والإدارة العامة</h3>
+                    <p class="institution">المعهد الدولي لإدارة الأعمال (IBMI)</p>
+                    <p class="description">
+                        برنامج تأهيل متخصص يغطي مجالات الإدارة الاستراتيجية، التخطيط المؤسسي، إدارة الأعمال الدولية، والقيادة التنفيذية، مع التركيز على تطبيق أفضل الممارسات الإدارية في بيئة الأعمال المعاصرة.
+                    </p>
+                </div>
+                <div class="education-item">
+                    <div class="education-badge">مكتمل</div>
+                    <h3>بكالوريوس – الأدب الإنجليزي والترجمة</h3>
+                    <p class="institution">جامعة دمشق | Damascus University</p>
+                    <p class="description">
+                        شهادة جامعية في الأدب الإنجليزي والترجمة، وفرت أساساً قوياً ومتيناً في مهارات التواصل اللغوي، الترجمة الاحترافية، التحليل النقدي، والقدرة على التفاعل بفعالية مع الثقافات المختلفة والجهات الدولية.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Experience -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2 class="section-title">الخبرة الحالية</h2>
+            <div class="experience-header">
+                <h3>IMPACT IN – مدير التميز والجودة</h3>
+                <span class="date-badge">أغسطس 2024 - حتى الآن</span>
+            </div>
+            <p class="experience-intro">
+                يشغل حالياً منصب مدير التميز والجودة في شركة IMPACT IN الاستشارية، حيث يقود مشاريع استراتيجية لتحقيق التميز المؤسسي للجهات الحكومية والخاصة، مع التركيز على تطبيق معايير التميز العالمية والمحلية وتحقيق الاعتمادات الدولية.
+            </p>
+            
+            <h4 class="projects-subtitle">المشاريع الرئيسية المنفذة:</h4>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-number">01</div>
+                    <h4>جائزة عجمان للتميز - برنامج 7 نجوم</h4>
+                    <p><strong>شرطة عجمان</strong></p>
+                    <p class="project-details">
+                        قيادة المشروع الشامل لتطبيق معايير جائزة عجمان للتميز ونظام التصنيف العالمي بالنجوم (7 نجوم) للقيادة العامة لشرطة عجمان.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">التميز المؤسسي</span>
+                        <span class="tag">جوائز</span>
+                        <span class="tag">7 نجوم</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-number">02</div>
+                    <h4>برنامج 7 نجوم للخدمات</h4>
+                    <p><strong>شرطة عجمان</strong></p>
+                    <p class="project-details">
+                        تطبيق نظام التصنيف العالمي بالنجوم على مراكز الخدمة والإدارات الرئيسية، شمل تحليل رحلة العميل وتحسين الخدمات.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">تصنيف الخدمات</span>
+                        <span class="tag">تحسين العمليات</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-number">03</div>
+                    <h4>برنامج 7 نجوم</h4>
+                    <p><strong>وزارة الصناعة والتكنولوجيا المتقدمة</strong></p>
+                    <p class="project-details">
+                        تنفيذ مشروع متكامل لتطبيق نظام التصنيف العالمي بالنجوم على خدمات الوزارة، تضمن إعادة تصميم رحلات العملاء.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">تحسين الخدمات</span>
+                        <span class="tag">رحلة العميل</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ministry of Health Experience -->
+    <section class="experience-section ministry-section">
+        <div class="container">
+            <div class="experience-header">
+                <div>
+                    <div class="role-badges">
+                        <span class="role-badge">خبير نظام التصنيف العالمي بالنجوم</span>
+                        <span class="role-badge">صفر بيروقراطية حكومية - مقيم رئيسي</span>
+                    </div>
+                    <h3>وزارة الصحة ووقاية المجتمع - خبير التميز المؤسسي وتحسين الخدمات</h3>
+                </div>
+                <span class="date-badge">يوليو 2022 - نوفمبر 2024</span>
+            </div>
+
+            <div class="achievements-highlights">
+                <div class="achievement-box">
+                    <i class="fas fa-globe"></i>
+                    <span>تطبيق معايير عالمية</span>
+                </div>
+                <div class="achievement-box">
+                    <i class="fas fa-building"></i>
+                    <span>تأسيس قسمين استراتيجيين</span>
+                </div>
+                <div class="achievement-box">
+                    <i class="fas fa-tools"></i>
+                    <span>إعادة هندسة 151 خدمة</span>
+                </div>
+                <div class="achievement-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>التصميم والابتكار</span>
+                </div>
+            </div>
+
+            <div class="responsibilities-list">
+                <div class="responsibility-item">
+                    <h4><span class="number">أولاً:</span> <span>مدير مشروع إعادة هندسة الخدمات</span></h4>
+                    <ul>
+                        <li>قيادة مشروع شامل لإعادة تصميم وتحسين 151 خدمة حكومية</li>
+                        <li>تطبيق منهجيات التصميم المرتكز على الإنسان</li>
+                        <li>تحليل رحلة العميل وتحديد نقاط الألم وفرص التحسين</li>
+                    </ul>
+                </div>
+
+                <div class="responsibility-item">
+                    <h4><span class="number">ثانياً:</span> <span>تأسيس قسم قيادة الخدمات</span></h4>
+                    <ul>
+                        <li>إنشاء وتأسيس قسم متخصص لقيادة وتحسين الخدمات الحكومية</li>
+                        <li>تطوير استراتيجيات وسياسات إدارة الخدمات</li>
+                        <li>بناء فريق عمل متخصص وتدريبه على أفضل الممارسات</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Previous Experience -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <h2 class="section-title">الخبرة السابقة والشهادات</h2>
+            
+            <div class="two-column-layout">
+                <!-- Previous Experience Column -->
+                <div class="previous-experience-column">
+                    <h3>الخبرة السابقة</h3>
+                    <div class="previous-jobs">
+                        <div class="previous-job-card">
+                            <h4>PDCA للاستشارات الإدارية</h4>
+                            <p class="job-role">مستشار التميز المؤسسي</p>
+                            <p class="job-date">2016 - 2017</p>
+                            <p class="job-description">
+                                تقديم استشارات متخصصة في مجالات التميز المؤسسي وإدارة الجودة للجهات الحكومية والخاصة.
+                            </p>
+                        </div>
+                        <div class="previous-job-card">
+                            <h4>أساتذة التميز المؤسسي الدولي</h4>
+                            <p class="job-role">مستشار التميز</p>
+                            <p class="job-date">2015 - 2016</p>
+                            <p class="job-description">
+                                العمل كمستشار تميز مؤسسي مع التركيز على تطوير أنظمة إدارة الأداء.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications Column -->
+                <div class="certifications-column">
+                    <h3>الشهادات المهنية</h3>
+                    <div class="cert-categories">
+                        <div class="cert-category">
+                            <h4><i class="fas fa-lightbulb"></i> الإبداع والابتكار</h4>
+                            <ul>
+                                <li>التفكير التصميمي (Design Thinking)</li>
+                                <li>إدارة الابتكار والتحول الرقمي</li>
+                                <li>تصميم تجربة المستخدم (UX Design)</li>
+                            </ul>
+                        </div>
+                        <div class="cert-category">
+                            <h4><i class="fas fa-project-diagram"></i> إدارة المشاريع</h4>
+                            <ul>
+                                <li>PMP - Project Management Professional</li>
+                                <li>PRINCE2 Foundation & Practitioner</li>
+                                <li>Certified Scrum Master (CSM)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">المهارات الأساسية والكفاءات المتخصصة</h2>
+            <p class="section-intro">
+                مجموعة متنوعة وشاملة من المهارات التقنية والإدارية والقيادية المكتسبة عبر أكثر من 12 عاماً من الخبرة العملية.
+            </p>
+
+            <div class="skills-grid">
+                <div class="skill-category-card">
+                    <div class="skill-icon"><i class="fas fa-tools"></i></div>
+                    <h3>إدارة المشاريع وتحسين الخدمات</h3>
+                    <ul>
+                        <li>إدارة المشاريع الاستشارية الكبرى والمعقدة</li>
+                        <li>إعادة هندسة العمليات والخدمات الحكومية (BPR)</li>
+                        <li>رسم وتحليل رحلة العميل</li>
+                        <li>تصميم الخدمات (Service Design)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>الاستراتيجية ومؤشرات الأداء</h3>
+                    <ul>
+                        <li>تطوير الاستراتيجيات المؤسسية والقطاعية</li>
+                        <li>بطاقة الأداء المتوازن (Balanced Scorecard)</li>
+                        <li>تصميم وتطوير مؤشرات الأداء الرئيسية (KPIs)</li>
+                        <li>التخطيط الاستراتيجي والتشغيلي</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deliverables Section -->
+    <section id="deliverables" class="deliverables-section">
+        <div class="container">
+            <h2 class="section-title">المخرجات المشتركة في المشاريع الاستشارية</h2>
+            <p class="deliverables-intro">
+                مجموعة شاملة من المخرجات والوثائق المؤسسية التي يتم تطويرها خلال المشاريع الاستشارية لضمان الاستدامة ونقل المعرفة:
+            </p>
+            
+            <div class="deliverables-grid">
+                <div class="deliverable-item">
+                    <i class="fas fa-check"></i>
+                    <span>تحليل الفجوات والتقييم التشخيصي الشامل</span>
+                </div>
+                <div class="deliverable-item">
+                    <i class="fas fa-check"></i>
+                    <span>رسم وتحليل وتحسين رحلة العميل</span>
+                </div>
+                <div class="deliverable-item">
+                    <i class="fas fa-check"></i>
+                    <span>استراتيجية تطوير وتحسين الخدمات</span>
+                </div>
+                <div class="deliverable-item">
+                    <i class="fas fa-check"></i>
+                    <span>تطوير وتفعيل ميثاق المتعاملين</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="awards-section">
+        <div class="container">
+            <h2 class="section-title">الجوائز والتقديرات المهنية</h2>
+            
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>شهادة تقدير من وزير الداخلية</h3>
+                    <p class="award-entity">شرطة عجمان</p>
+                    <p class="award-year">2025</p>
+                    <p class="award-description">
+                        تقديراً للجهود المتميزة في تطبيق برنامج 7 نجوم وتحقيق نتائج استثنائية في تحسين الخدمات.
+                    </p>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-icon"><i class="fas fa-award"></i></div>
+                    <h3>جوائز داخلية من إيثوس</h3>
+                    <ul class="awards-list">
+                        <li>جائزة البطل المجهول</li>
+                        <li>أفضل موظف</li>
+                        <li>موظف العام 2020</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Hidden for Print) -->
+    <section id="contact" class="contact-section no-print">
+        <div class="container">
+            <h2 class="section-title">تواصل معي</h2>
+            <p class="section-intro">
+                أنا جاهز للتعاون وتبادل الأفكار. لا تتردد في التواصل عبر أي من الوسائل التالية:
+            </p>
+            
+            <div class="contact-grid">
+                <a href="tel:0567889975" class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h4>الهاتف</h4>
+                    <p>0567889975</p>
+                </a>
+                
+                <a href="https://wa.me/971567889975" class="contact-card whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <h4>واتساب</h4>
+                    <p>0567889975</p>
+                </a>
+                
+                <a href="mailto:Moein-najem@hotmail.com" class="contact-card email">
+                    <i class="fas fa-envelope"></i>
+                    <h4>البريد الإلكتروني</h4>
+                    <p>Moein-najem@hotmail.com</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Hidden for Print) -->
+    <footer class="footer no-print">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <p>© 2025 معين نجم - جميع الحقوق محفوظة</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#home" class="footer-link">
+                        <i class="fas fa-home"></i>
+                        <span>الرئيسية</span>
+                    </a>
+                    <a href="#contact" class="footer-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>تواصل</span>
+                    </a>
+                    <button class="footer-link" onclick="downloadCV()">
+                        <i class="fas fa-download"></i>
+                        <span>تحميل PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Hamburger Button -->
+    <button class="floating-hamburger" id="floating-hamburger" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <script>
+        // ===== Mobile Menu Functionality =====
+        let mobileMenuOpen = false;
+
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger-menu');
+            const backdrop = document.querySelector('.mobile-menu-backdrop');
+            const floatingBtn = document.getElementById('floating-hamburger');
+            
+            mobileMenuOpen = !mobileMenuOpen;
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            backdrop.classList.toggle('active');
+            
+            // Hide floating button when menu is open
+            if (mobileMenuOpen && floatingBtn) {
+                floatingBtn.classList.remove('active');
+            }
+            
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
+        }
+
+        function closeMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger-menu');
+            const backdrop = document.querySelector('.mobile-menu-backdrop');
+            
+            mobileMenuOpen = false;
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+            backdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Close menu when clicking backdrop
+        document.querySelector('.mobile-menu-backdrop').addEventListener('click', closeMobileMenu);
+
+        // Close menu on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1024 && mobileMenuOpen) {
+                closeMobileMenu();
+            }
+        });
+
+        // ===== Hide/Show Header on Scroll =====
+        let lastScrollY = window.scrollY;
+        const navbar = document.querySelector('.navbar');
+        const floatingBtn = document.getElementById('floating-hamburger');
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            const scrollDown = currentScrollY > lastScrollY;
+            const atTop = currentScrollY < 100;
+            
+            if (atTop) {
+                navbar.classList.remove('hidden');
+                navbar.classList.add('visible');
+                if (floatingBtn) floatingBtn.classList.remove('active');
+            } else if (scrollDown && currentScrollY > 100) {
+                // Hide navbar when scrolling down
+                navbar.classList.remove('visible');
+                navbar.classList.add('hidden');
+                
+                // Show floating button on mobile
+                if (window.innerWidth <= 1024 && !mobileMenuOpen) {
+                    if (floatingBtn) floatingBtn.classList.add('active');
+                }
+            } else {
+                // Show navbar when scrolling up
+                navbar.classList.remove('hidden');
+                navbar.classList.add('visible');
+                if (floatingBtn) floatingBtn.classList.remove('active');
+            }
+            
+            // Add shadow when scrolled
+            if (currentScrollY > 10) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+
+        // ===== Smooth Scroll =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const headerHeight = navbar.offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = targetPosition - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mobileMenuOpen) {
+                        closeMobileMenu();
+                    }
+                }
+            });
+        });
+
+        // ===== Active Navigation Link =====
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        function updateActiveLink() {
+            const scrollPosition = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveLink);
+
+        // ===== Download CV Function =====
+        function downloadCV() {
+            // Temporarily hide non-print elements
+            const nonPrintElements = document.querySelectorAll('.no-print');
+            nonPrintElements.forEach(el => {
+                el.style.display = 'none';
+            });
+            
+            // Trigger print
+            window.print();
+            
+            // Restore elements after a delay
+            setTimeout(() => {
+                nonPrintElements.forEach(el => {
+                    el.style.display = '';
+                });
+            }, 1000);
+        }
+
+        // ===== Language Toggle =====
+        let currentLang = 'ar';
+
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const langText = document.getElementById('lang-text');
+            
+            if (currentLang === 'ar') {
+                currentLang = 'en';
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                langText.textContent = 'AR';
+                
+                // Update all text content (simplified version)
+                document.querySelectorAll('[data-ar]').forEach(el => {
+                    const enText = el.getAttribute('data-en') || el.textContent;
+                    el.setAttribute('data-original-ar', el.textContent);
+                    el.textContent = enText;
+                });
+                
+                // Update nav brand
+                document.querySelector('.nav-brand span').textContent = 'Moein Najem';
+                
+            } else {
+                currentLang = 'ar';
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+                langText.textContent = 'EN';
+                
+                // Restore Arabic text
+                document.querySelectorAll('[data-original-ar]').forEach(el => {
+                    const originalAr = el.getAttribute('data-original-ar');
+                    el.textContent = originalAr;
+                    el.removeAttribute('data-original-ar');
+                });
+                
+                // Update nav brand
+                document.querySelector('.nav-brand span').textContent = 'معين نجم';
+            }
+            
+            // Save preference
+            localStorage.setItem('preferredLang', currentLang);
+        }
+
+        // Load saved language preference
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLang');
+            if (savedLang && savedLang === 'en') {
+                toggleLanguage();
+            }
+            
+            // Initialize floating button visibility
+            if (window.innerWidth <= 1024 && window.scrollY > 100) {
+                const floatingBtn = document.getElementById('floating-hamburger');
+                if (floatingBtn) floatingBtn.classList.add('active');
+            }
+        });
+
+        // ===== iOS Viewport Fix =====
+        function setViewportHeight() {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        window.addEventListener('resize', setViewportHeight);
+        setViewportHeight();
+
+        // ===== Lazy Loading for Images =====
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img[data-src]');
+            
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            images.forEach(img => imageObserver.observe(img));
+        });
+
+        console.log('السيرة الذاتية لمعين نجم - جاهزة للاستخدام ✅');
+    </script>
+</body>
+</html>
